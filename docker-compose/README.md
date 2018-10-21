@@ -4,7 +4,7 @@ Read more on Docker Compose documentation here: https://docs.docker.com/compose/
 
 Deployment Architecture
 -----------------------
-
+```
                                                   +-----------+
                       |                           |   MySQL   |
     Database          |                           +-----^-----+
@@ -22,6 +22,7 @@ Deployment Architecture
                       |                           |  Apache    |
                       |                           +------------+
                       
+```
 This deployment architecture contains:
 * MySQL running in a single container with host volume mapping for persistent storage.
 * Three instances of Hippo CMS running in separate containers with links to MySQL container
