@@ -28,6 +28,12 @@ This deployment architecture contains:
 * Three instances of Hippo CMS running in separate containers with links to MySQL container
 * Apache (httpd) running as a reverse proxy and load balancer. 
 
+Container Images
+----------------
+MySQL : https://hub.docker.com/_/mysql/
+Hippo Project: https://hub.docker.com/r/maheshacharya/myhippoproject-docker-deployment-demo-mysql/
+Apache2 : https://hub.docker.com/r/rgoyard/apache-proxy/
+
 
 
 Apply Configuration Changes
