@@ -1,0 +1,67 @@
+version: '2'
+services:
+  mysql-database:
+    image: mysql:5.6.36
+    environment:
+      - MYSQL_ROOT_PASSWORD=hippo
+      - MYSQL_DATABASE=hippo
+      - MYSQL_PASSWORD=hippo
+      - MYSQL_USER=hippo
+      - ON_CREATE_DB="hippo"
+    command: mysqld --max_allowed_packet=90M
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - "./hippo/mysql:/var/lib/mysql" 
+  apache:
+    image: rgoyard/apache-proxy
+    ports:
+      - '80:80'
+      - '443:443'
+    expose:
+      - "80"
+      - "443"
+    volumes:
+      - "./apache2/sites-available/:/etc/apache2/sites-available/"
+    links:
+      - hippo1:hippo1
+      - hippo2:hippo2
+      - hippo2:hippo3    
+  hippo1:
+    image: registry.achxis.com:8082/nejug 
+    expose:
+      - "8009"
+      - "8080"
+      - "8443"
+    ports:
+      - "8001:8009"
+      - "8081:8080"
+      - "9441:9443"
+    links:
+      - mysql-database:mysql-database
+  hippo2:
+    image: registry.achxis.com:8082/nejug 
+    expose:
+      - "8009"
+      - "8080"
+      - "8443"
+    ports:
+      - "8002:8009"
+      - "8082:8080"
+      - "9442:9443"
+    links:
+      - mysql-database:mysql-database
+  hippo3:
+    image: registry.achxis.com:8082/nejug 
+    expose:
+      - "8009"
+      - "8080"
+      - "8443"
+    ports:
+      - "8003:8009"
+      - "8083:8080"
+      - "9443:9443"
+    links:
+      - mysql-database:mysql-database

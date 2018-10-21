@@ -1,0 +1,30 @@
+<VirtualHost *:80>
+            
+	ServerName <domain name>
+	# everthing that does not match cms.example.com also goes to the site application
+	ServerAlias *.<domain name>
+
+	ProxyRequests Off
+
+		
+	ProxyPreserveHost  On
+	RewriteEngine on
+	RewriteRule ^/site/(.*)$ /$1 [P] 
+
+	ProxyPass  / balancer://cluster/ stickysession=JSESSIONID nofailover=Off
+    ProxyPassReverse  / balancer://cluster/site
+     
+    ProxyPassReverseCookiePath /site balancer://cluster/
+    ProxyPassreverseCookieDomain balancer://cluster <domain name>
+    Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
+	<Proxy balancer://cluster>
+		Order deny,allow
+    	Allow from all
+	    BalancerMember http://hippo1:8080/site route=1
+	    BalancerMember http://hippo2:8080/site route=2
+	    BalancerMember http://hippo3:8080/site route=3
+	    #ProxySet lbmethod=byrequests
+	    ProxySet stickysession=ROUTEID nofailover=Off
+	</Proxy>	
+
+</VirtualHost>

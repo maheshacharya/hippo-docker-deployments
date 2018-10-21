@@ -1,0 +1,57 @@
+<IfModule mod_ssl.c>
+	<VirtualHost *:443>
+		ServerAdmin webmaster@localhost
+		
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+		SSLEngine on
+
+		SSLCertificateFile	/etc/ssl/certs/ssl-cert-snakeoil.pem
+		SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+		
+		ServerName <cms domain name>
+
+		ProxyPreserveHost Off
+		RewriteEngine on
+ 		# RewriteRule ^/site/(.*)$ /$1 [R=301]
+
+  		#INCLUDE THE EXTRA PROXYPASS RULE FOR /site HERE
+  		ProxyPass /site/ http://hippo1:8080/site/
+  		ProxyPass / http://hippo1:8080/cms/
+  		ProxyPassReverse / http://hippo1:8080/cms/
+  		ProxyPassReverseCookiePath /cms /
+
+	</VirtualHost>
+	<VirtualHost *:443>
+        ServerAdmin info@localhost
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        SSLEngine on
+        SSLCertificateFile	/etc/ssl/certs/ssl-cert-snakeoil.pem
+		SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+
+        ServerName <site domain name>
+        # everthing that does not match cms.example.com also goes to the site application
+        ServerAlias *.<site domain name>
+
+		<Location />
+   			Order deny,allow
+    			Allow from all
+		 </Location>
+		RequestHeader set X-Forwarded-Proto https
+                ProxyPreserveHost  On
+                RewriteEngine on
+                RewriteRule ^/site/(.*)$ /$1 [P] 
+                
+		ProxyPass  / http://hippo1:8080/site/
+                ProxyPassReverse  / http://hippo1:8080/site/
+                ProxyPassReverseCookiePath  /site /
+                ProxyPassreverseCookieDomain localhost <site domain name>
+	</VirtualHost>
+
+</IfModule>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
