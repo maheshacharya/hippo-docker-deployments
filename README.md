@@ -14,5 +14,5 @@ TBD (Stay Tuned)
 Desclaimer
 ==========
 * I have worked as Solution Architect at Hippo CMS for 2.5 years until late 2017.
-* All ideas and concepts presented here are my own.
+* All ideas and concepts presented here are my own and NOT tested and approved by parent company of Hippo CMS.
 
