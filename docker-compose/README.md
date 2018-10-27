@@ -1,16 +1,16 @@
 Deploy Hippo CMS using Docker Compose
 =====================================
-[Hippo CMS](https://www.onehippo.org/) is one of the elegant yet sophisticated Open Source Java web application platform, procedures to properly deploy Hipo CMS application requires covering a lot of areas of Dev-Ops tooling and concepts. Hippo CMS uses Apache Jackrabbit JCR repository, achieving a scalable deployment procedure makes it a true enterprice ready content management platform.
+[Hippo CMS](https://www.onehippo.org/) is one of the elegant yet sophisticated Open Source Java web application platform, procedures to properly deploy Hippo CMS application requires covering a lot of areas of Dev-Ops tooling and concepts. Hippo CMS uses Apache Jackrabbit JCR repository, achieving a scalable deployment procedure makes it a true enterprise-ready content management platform.
 
 
 Goals
 -----
 * Deploy containerized Hippo CMS application on a single node Docker host VM using Docker Compose.
-* Use MySQL Database as persistance data storage for the repository.
-  * Use volume mounted on the Host VM so that re-deployment of application will bootstrap from the data on persistant volume. 
-* Run 3 instances of Hippo CMS for to achieve desired scalability of website and cms applications. 
+* Use MySQL Database as persistent data storage for the repository.
+  * Use volume mounted on the Host VM so that re-deployment of application will bootstrap from the data on the persistent volume. 
+* Run 3 instances of Hippo CMS to achieve the desired scalability of website and cms applications. 
 * Run Apache (httpd) as Load Balancer and Reverse Proxy.
-  * Use round-robin load balancing with stickness enabled.
+  * Use round-robin load balancing with sickiness enabled.
   * Stickiness is important for CMS application as it is stateful. 
 
 
@@ -31,8 +31,8 @@ Our test platform specs
 Hippo CMS Poject
 ----------------
 We are using this project https://github.com/maheshacharya/hippo-docker-example
-This project has two maven profiles that enables building Docker Images. To use your own projects, you will have to buiild Docker Image of your projects and then deploy the images to [Docker Hub](https://hub.docker.com/) or to a private registry.
-We have alreday created image that is needed for this deployment which is available [here](https://hub.docker.com/r/maheshacharya/myhippoproject-docker-deployment-demo-mysql/)
+This project has two maven profiles that enable building Docker Images. To use your own projects, you will have to build Docker Image of your projects and then deploy the images to [Docker Hub](https://hub.docker.com/) or to a private registry.
+We have already created an image that is needed for this deployment which is available [here](https://hub.docker.com/r/maheshacharya/myhippoproject-docker-deployment-demo-mysql/)
 
 
 Deployment Architecture
