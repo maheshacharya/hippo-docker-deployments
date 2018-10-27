@@ -10,8 +10,7 @@
 		Allow from all
 	</Location>
 
-	
-	#ProxyPassreverseCookieDomain http://hippo1:8080/cms cms.cloud-hub.co
+
 	Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
 	<Proxy balancer://cluster>
 		BalancerMember http://hippo1:8080 route=1
@@ -19,16 +18,22 @@
 	    BalancerMember http://hippo3:8080 route=3
 	    ProxySet stickysession=ROUTEID nofailover=Off	    
 	</Proxy>
-	ProxyPass /site/ balancer://cluster/site/
+
+	
     ProxyPass / balancer://cluster/cms/
     ProxyPassReverse / balancer://cluster/cms/
     ProxyPassReverseCookiePath /cms /	
+
+    #This is required for Channel Manager to render the site correctly within CMS 
+    #Check this (below) page for Channel Manager troubleshooting. 
+    #https://www.onehippo.org/library/concepts/channels/channel-manager-troubleshooting.html
+
+    ProxyPass /site/ balancer://cluster/site/
 
 </VirtualHost>
 <VirtualHost *:80>
             
 	ServerName site.cloud-hub.co
-	# everthing that does not match cms.example.com also goes to the site application
 	ServerAlias *.cloud-hub.co
 
 	ProxyRequests Off
@@ -36,6 +41,8 @@
 		
 	ProxyPreserveHost  On
 	RewriteEngine on
+	# This is required if the application uses context-aware modules such as spring security.
+	# remove the extra '/site' appended by the context-aware application.
 	RewriteRule ^/site/(.*)$ /$1 [P] 
 
 	<Location />
