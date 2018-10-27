@@ -4,7 +4,6 @@
 	ProxyRequests Off
 	ProxyPreserveHost  Off
 	RewriteEngine on
-	RewriteRule ^/site/(.*)$ /$1 [P] 
 
 	<Location />
 		Order deny,allow
