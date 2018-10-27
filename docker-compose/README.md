@@ -115,6 +115,7 @@ Reference Links
 * Docker: https://docs.docker.com/
 * Docker Compose: https://docs.docker.com/compose/
 * Hippo CMS: https://www.onehippo.org/trails/getting-started/hippo-essentials-getting-started.html
+* Hippo CMS Demo Project with Container Image building profile: https://github.com/maheshacharya/hippo-docker-example
 
 
 
