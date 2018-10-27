@@ -8,8 +8,8 @@ Goals
 * Deploy containerized Hippo CMS application on a single node Docker host VM using Docker Compose.
 * Use MySQL Database as persistance data storage for the repository.
   * Use volume mounted on the Host VM so that re-deployment of application will bootstrap from the data on persistant volume. 
-* Run 3 instances of Hippo CMS for to achieve a desired scalability of website and cms applications. 
-* Run Apache as Load Balancer and Reverse Proxy.
+* Run 3 instances of Hippo CMS for to achieve desired scalability of website and cms applications. 
+* Run Apache (httpd) as Load Balancer and Reverse Proxy.
   * Use round-robin load balancing with stickness enabled.
   * Stickiness is important for CMS application as it is stateful. 
 
