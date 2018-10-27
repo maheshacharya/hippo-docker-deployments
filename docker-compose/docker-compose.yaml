@@ -9,10 +9,6 @@ services:
       - MYSQL_USER=hippo
       - ON_CREATE_DB="hippo"
     command: mysqld --max_allowed_packet=90M
-    ports:
-      - "3306:3306"
-    expose:
-      - "3306"
     volumes:
       - "./hippo/mysql:/var/lib/mysql" 
   apache:
@@ -31,37 +27,13 @@ services:
       - hippo2:hippo3    
   hippo1:
     image: maheshacharya/myhippoproject-docker-deployment-demo-mysql
-    expose:
-      - "8009"
-      - "8080"
-      - "8443"
-    ports:
-      - "8001:8009"
-      - "8081:8080"
-      - "9441:9443"
     links:
       - hippo-mysql-database:hippo-mysql-database
   hippo2:
     image: maheshacharya/myhippoproject-docker-deployment-demo-mysql 
-    expose:
-      - "8009"
-      - "8080"
-      - "8443"
-    ports:
-      - "8002:8009"
-      - "8082:8080"
-      - "9442:9443"
     links:
       - hippo-mysql-database:hippo-mysql-database
   hippo3:
     image: maheshacharya/myhippoproject-docker-deployment-demo-mysql
-    expose:
-      - "8009"
-      - "8080"
-      - "8443"
-    ports:
-      - "8003:8009"
-      - "8083:8080"
-      - "9443:9443"
     links:
       - hippo-mysql-database:hippo-mysql-database
