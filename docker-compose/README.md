@@ -77,7 +77,7 @@ Replace ```cloud-hub.co``` with your own server DNS name.
 
 Deploy Hippo CMS
 ----------------
-Change current working directory to docker-compose and then run:
+Change current working directory to docker-compose and run following command:
 ```
 $ docker-compose up -d
 ```
