@@ -128,10 +128,10 @@ Reference Links
 
 Limitations of Docker Compose based deployment
 ----------------------------------------------
-Although Docker Compose based deployment simplies the over all deployment process, the Application cannot be dynamically scaled: Hippo CMS containers cannot be scaled at runtime, adding more containers will require changes to the Load Balancer configuration and the containers have to be re-deployed to bind any configuration changes. To achieve dynamic scalablility it is better to use Docker Swarm or Kubebernetes as your deployment platform. 
+Although Docker Compose based deployment simplifies the overall deployment process, the Application cannot be dynamically scaled: Hippo CMS containers cannot be scaled at runtime, adding more containers will require changes to the Load Balancer configuration and the containers have to be re-deployed to bind any configuration changes. To achieve dynamic scalability it is better to use Docker Swarm or Kubernetes as your deployment platform. 
 
 Conclusion
 ----------
-Docker Compose based deployment model simplifies the overall repeatable deployent process with the execution of a single command.
+Docker Compose based deployment model simplifies the overall repeatable deployment process with the execution of a single command.
 
 
