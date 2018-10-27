@@ -9,8 +9,8 @@ Goals
 * Use MySQL Database as persistance data storage for the repository.
 * Run 3 instances of Hippo CMS for to achieve a desired scalability of website and cms applications. 
 * Run Apache as Load Balancer and Reverse Proxy.
-* Use round-robin load balancing with stickness enabled.
-* Stickiness is important for CMS application as it is stateful. 
+  * Use round-robin load balancing with stickness enabled.
+  * Stickiness is important for CMS application as it is stateful. 
 
 
 Requirements
