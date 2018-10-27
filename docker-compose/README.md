@@ -2,6 +2,31 @@ Deploy Hippo CMS using Docker Compose
 =====================================
 Read more on Docker Compose documentation here: https://docs.docker.com/compose/
 
+
+Goals
+=====
+* Deploy containerized Hippo CMS application on a single node Docker host VM using Docker Compose.
+* Use MySQL Database as persistance data storage for the repository.
+* Run 3 instances of Hippo CMS for to achieve a desired scalability of website and cms applications. 
+* Run Apache as Load Balancer and Reverse Proxy.
+** Use round-robin load balancing with stickness enabled.
+** Stickiness is important for CMS application as it is stateful. 
+
+
+Requirements
+============
+* Linux Server VM (Ubuntu, RHEL, CentOS etc.)
+* Docker
+* Docker Compose
+
+Our test platform specs
+=======================
+* Host VM
+** Ubuntu 18.04 on AWS 
+* Docker version: 18.06.1-ce
+* Docker Compose Version: 1.22.0  
+
+
 Deployment Architecture
 -----------------------
 ```
@@ -43,8 +68,47 @@ Replace ```cloud-hub.co``` with your own server DNS name.
 
 
 Deploy Hippo CMS
-----------
+----------------
 Change current working directory to docker-compose and then run:
 ```
 $ docker-compose up -d
 ```
+Terminal Output 
+---------------
+Successful deployment out will resemble something like below:
+
+```
+Creating network "docker-compose_default" with the default driver
+Creating docker-compose_hippo-mysql-database_1 ... done
+Creating docker-compose_hippo3_1               ... done
+Creating docker-compose_hippo2_1               ... done
+Creating docker-compose_hippo1_1               ... done
+Creating docker-compose_apache_1               ... done
+```
+
+
+Remove Appication Stack
+-----------------------
+```
+$ docker-compose down
+```
+Terminal Output
+---------------
+Successful removal will display following output in terminal
+
+```
+Stopping docker-compose_apache_1               ... done
+Stopping docker-compose_hippo3_1               ... done
+Stopping docker-compose_hippo1_1               ... done
+Stopping docker-compose_hippo2_1               ... done
+Stopping docker-compose_hippo-mysql-database_1 ... done
+Removing docker-compose_apache_1               ... done
+Removing docker-compose_hippo3_1               ... done
+Removing docker-compose_hippo1_1               ... done
+Removing docker-compose_hippo2_1               ... done
+Removing docker-compose_hippo-mysql-database_1 ... done
+Removing network docker-compose_default
+```
+
+
+
