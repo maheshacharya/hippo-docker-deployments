@@ -1,8 +1,36 @@
 <VirtualHost *:80>
+        
+	ServerName cms.cloud-hub.co
+	ProxyRequests Off
+	ProxyPreserveHost  Off
+	RewriteEngine on
+	RewriteRule ^/site/(.*)$ /$1 [P] 
+
+	<Location />
+		Order deny,allow
+		Allow from all
+	</Location>
+
+	
+	#ProxyPassreverseCookieDomain http://hippo1:8080/cms cms.cloud-hub.co
+	Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
+	<Proxy balancer://cluster>
+		BalancerMember http://hippo1:8080 route=1
+	    BalancerMember http://hippo2:8080 route=2
+	    BalancerMember http://hippo3:8080 route=3
+	    ProxySet stickysession=ROUTEID nofailover=Off	    
+	</Proxy>
+	ProxyPass /site/ balancer://cluster/site/
+    ProxyPass / balancer://cluster/cms/
+    ProxyPassReverse / balancer://cluster/cms/
+    ProxyPassReverseCookiePath /cms /	
+
+</VirtualHost>
+<VirtualHost *:80>
             
-	ServerName <domain name>
+	ServerName site.cloud-hub.co
 	# everthing that does not match cms.example.com also goes to the site application
-	ServerAlias *.<domain name>
+	ServerAlias *.cloud-hub.co
 
 	ProxyRequests Off
 
@@ -11,20 +39,20 @@
 	RewriteEngine on
 	RewriteRule ^/site/(.*)$ /$1 [P] 
 
-	ProxyPass  / balancer://cluster/ stickysession=JSESSIONID nofailover=Off
-    ProxyPassReverse  / balancer://cluster/site
-     
-    ProxyPassReverseCookiePath /site balancer://cluster/
-    ProxyPassreverseCookieDomain balancer://cluster <domain name>
+	<Location />
+		Order deny,allow
+		Allow from all
+	</Location>
+    
     Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
 	<Proxy balancer://cluster>
-		Order deny,allow
-    	Allow from all
-	    BalancerMember http://hippo1:8080/site route=1
-	    BalancerMember http://hippo2:8080/site route=2
-	    BalancerMember http://hippo3:8080/site route=3
-	    #ProxySet lbmethod=byrequests
+	    BalancerMember http://hippo1:8080 route=1
+	    BalancerMember http://hippo2:8080 route=2
+	    BalancerMember http://hippo3:8080 route=3
 	    ProxySet stickysession=ROUTEID nofailover=Off
-	</Proxy>	
-
+	</Proxy>
+	ProxyPass / balancer://cluster/site/	
+	ProxyPassReverse  / balancer://cluster/site/
+    ProxyPassReverseCookiePath /site /
+    #ProxyPassreverseCookieDomain balancer://cluster site.cloud-hub.co
 </VirtualHost>
