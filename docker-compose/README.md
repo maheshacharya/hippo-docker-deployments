@@ -27,6 +27,12 @@ Our test platform specs
 * Docker version: 18.06.1-ce
 * Docker Compose Version: 1.22.0  
 
+Hippo CMS Poject
+----------------
+We are using this project https://github.com/maheshacharya/hippo-docker-example
+This project has two maven profiles that enables building Docker Images. To use your own projects, you will have to buiild Docker Image of your projects and then deploy the images to Docker Hub (https://hub.docker.com/) or to a private registry.
+We have alreday created image that is needed for this deployment which is available here (https://hub.docker.com/r/maheshacharya/myhippoproject-docker-deployment-demo-mysql/)
+
 
 Deployment Architecture
 -----------------------
