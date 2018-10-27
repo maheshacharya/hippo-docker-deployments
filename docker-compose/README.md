@@ -26,6 +26,7 @@ Our test platform specs
  * Ubuntu 18.04 on AWS 
 * Docker version: 18.06.1-ce
 * Docker Compose Version: 1.22.0  
+* Hippo CMS version: 12.04
 
 Hippo CMS Poject
 ----------------
