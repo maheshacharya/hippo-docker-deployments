@@ -132,6 +132,6 @@ Although Docker Compose based deployment simplies the over all deployment proces
 
 Conclusion
 ----------
-* Docker Compose based deployment model simplifies the overall repeatable deployent process.
+Docker Compose based deployment model simplifies the overall repeatable deployent process with the execution of a single command.
 
 
