@@ -22,7 +22,7 @@ Requirements
 Our test platform specs
 =======================
 * Host VM
-** Ubuntu 18.04 on AWS 
+ * Ubuntu 18.04 on AWS 
 * Docker version: 18.06.1-ce
 * Docker Compose Version: 1.22.0  
 
