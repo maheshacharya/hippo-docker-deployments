@@ -4,9 +4,10 @@ Hippo CMS is one of the simple yet sophisticated Open Source Java web applicatio
 
 
 Goals
-=====
+-----
 * Deploy containerized Hippo CMS application on a single node Docker host VM using Docker Compose.
 * Use MySQL Database as persistance data storage for the repository.
+ * Use volume mounted on the Host VM so that re-deployment of application will bootstrap from the data on persistant volume. 
 * Run 3 instances of Hippo CMS for to achieve a desired scalability of website and cms applications. 
 * Run Apache as Load Balancer and Reverse Proxy.
   * Use round-robin load balancing with stickness enabled.
@@ -14,13 +15,13 @@ Goals
 
 
 Requirements
-============
+------------
 * Linux Server VM (Ubuntu, RHEL, CentOS etc.)
 * Docker
 * Docker Compose
 
 Our test platform specs
-=======================
+-----------------------
 * Host VM
  * Ubuntu 18.04 on AWS 
 * Docker version: 18.06.1-ce
@@ -110,12 +111,20 @@ Removing docker-compose_hippo-mysql-database_1 ... done
 Removing network docker-compose_default
 ```
 
+
 Reference Links
-===============
+---------------
 * Docker: https://docs.docker.com/
 * Docker Compose: https://docs.docker.com/compose/
 * Hippo CMS: https://www.onehippo.org/trails/getting-started/hippo-essentials-getting-started.html
 * Hippo CMS Demo Project with Container Image building profile: https://github.com/maheshacharya/hippo-docker-example
 
+Limitations
+-----------
+Although Docker Compose based deployment simplies the over all deployment process, the Application cannot be dynamically scaled -- meaning, Hippo CMS containers cannot be scaled at runtime, adding more containers will require Load Balabcer config changes and the containers have to be re-deployed to bind all configuration changes. To achieve dynamic scalablility it is better to use Docker Swarm or Kubebernetes as your deployment platform. 
+
+Conclusion
+----------
+* Docker Compose based deployment model simplifies the overall repeatable deployent process.
 
 
