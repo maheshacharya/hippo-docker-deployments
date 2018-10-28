@@ -28,14 +28,7 @@ Architecture
          Ingress    |                              +-----------------------+                            
                     |                              | Kubernetes Ingress LB |                            
                     |                              +-----------------------+                            
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
+                                                                                    
 ```
 
 To deploy
