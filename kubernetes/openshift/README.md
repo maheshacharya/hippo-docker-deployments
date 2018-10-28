@@ -12,3 +12,7 @@ Deploy application
 cd kuberntes
 oc create -f hippo-mysql.yml -n hippo
 ```
+
+Create a Route for Hippo Service
+------
+TBD
