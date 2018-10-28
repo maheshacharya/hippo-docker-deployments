@@ -7,7 +7,31 @@ Goals
 * Start the cluster with 4 containers of Hippo CMS.
 * Use [Traefik](https://traefik.io/) load balancer to acheive JSESSIONID based session affinity.
 * Use Apache(http) reverse proxy.
-
+Architecture
+------------
+```
+                                                  +----------+
+                                                  |   MySQL  |
+    Database          |                           +----------+
+                      |                                 |
+   ----------- -------                                  |
+                      |            +-------------------++-------------------+
+                      |            |                    |                   |
+    Hippo CMS         |    +-------+------+       +-----+------+    +-------+------+
+                      |    |   Node #1    |       |   Node #2  |    |   Node #3    |
+                      |    +-------^------+       +-----+------+    +-------^------+
+   -------------------             |                    |                   |
+                      |            +--------------------+-------------------+
+                      |                                 |
+                      |                           +-----+------+
+    Load Balancer     |                           | Traefik LB |
+                      |                           +-----^------+
+   -------------------                                  |
+                      |                                 |
+                      |                        +--------+---------+
+    Reverse Proxy     |                        | Apache (httpd)   |
+                                               +------------------+
+```
 Deploy the stack
 -----------------
 ```
