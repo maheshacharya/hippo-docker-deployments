@@ -1,5 +1,5 @@
 # Hippo CMS -- Deployment using Kubernetes
-*Please note: Documentation is still being added to this page, I appreciate your patience.*
+*Please note: The documentation is still being added to this page, I appreciate your patience.*
 
 When it comes to Kubernetes, we talk about pods, services etc. From principles of [Kubernetes](https://kubernetes.io/docs/concepts/workloads/pods/pod/), a **Pod** is a minimum unit of deployment: a **Pod** can contain more than one container that can share same volume and can communicate with other containers on localhost. 
 
