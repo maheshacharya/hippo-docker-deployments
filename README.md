@@ -4,9 +4,9 @@ Deploy Hippo CMS as containers using docker compose, docker swarm and Kubernetes
 
 * [Docker Compose](https://github.com/maheshacharya/hippo-docker-deployments/blob/master/docker-compose/README.md)
 * [Docker Swarm](https://github.com/maheshacharya/hippo-docker-deployments/tree/master/docker-swarm)
+* [Kubernetes](https://github.com/maheshacharya/hippo-docker-deployments/tree/master/kubernetes)
 
 TBD (Stay Tuned ... currently working on it)
-* [Kubernetes]
  * [OpenShift]
  * [Rancher]
 
