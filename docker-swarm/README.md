@@ -88,6 +88,7 @@ h5r6kunnq1py        hippo_mysql-database   replicated          1/1              
 
 ```
 **Scaling Hippo CMS  to 8 containers.**
+make sure the underlying cluster VM has enough resources to support the new instances, othewrise, you can join more VM nodes to swram cluster to scale out and then scale the containers.
 ```
 docker service scale hippo_hippo=8
 ```
