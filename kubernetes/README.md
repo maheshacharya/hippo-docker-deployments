@@ -167,9 +167,22 @@ kubectl get pods -n hippo-test
 ```
 Output
 ```
+NAME                     READY   STATUS    RESTARTS   AGE
 hippo-8677b459d9-vk4w4   2/2     Running   0          38s
 mysql-0                  1/1     Running   0          38s
 ```
+Check for running services
+-----------------------
+```
+kubectl get services -n hippo-test
+```
+Output
+```
+NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+hippo                  ClusterIP   10.106.52.158   <none>        80/TCP     2m34s
+hippo-mysql-database   ClusterIP   10.108.6.70     <none>        3306/TCP   2m34s
+```
+
 
 References
 -------
