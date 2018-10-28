@@ -131,7 +131,7 @@ data:
     }
     server {
       listen       80;
-      server_name "hippo.cloud-hub.co";
+      server_name "site.cloud-hub.co";
       location / {
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-Host $host;
