@@ -162,5 +162,6 @@ In order to access the service, you will have to install Ingress Controller and 
 
 References
 -------
-* Get started with Kubernetes: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+* Get started with Kubernetes: https://kubernetes.io/docs/
+* Install Kubernetes Cluster usking Kubeadm: https://kubernetes.io/docs/setup/independent/install-kubeadm/
 * Kubernetes Ingress Controller: https://kubernetes.github.io/ingress-nginx/deploy/
