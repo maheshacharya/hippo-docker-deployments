@@ -1,4 +1,5 @@
 # Hippo CMS -- Deployment using Kubernetes
+*Please note: Documentation is still being added to this page, I appreciate your patience.*
 
 To deploy
 ---------
