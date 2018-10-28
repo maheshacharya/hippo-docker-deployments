@@ -49,4 +49,4 @@ In order to access the service, you will have to install Ingress Controller and 
 References
 -------
 * Get started with Kubernetes: https://kubernetes.io/docs/tasks/tools/install-kubectl/
-
+* Kubernetes Ingress Controller: https://kubernetes.github.io/ingress-nginx/deploy/
