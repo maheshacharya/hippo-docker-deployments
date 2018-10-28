@@ -73,12 +73,3 @@ Creating service hippo_loadbalancer
 Creating service hippo_mysql-database
 ```
 
-Run ```docker service ls``` should smilar output (below).
-```
-ID                  NAME                   MODE                REPLICAS            IMAGE                                   PORTS
-uakb07lmovuk        hippo_apache           replicated          0/1                 rgoyard/apache-proxy:latest             *:80->80/tcp, *:443->443/tcp
-qn3e8lkwe1v2        hippo_hippo            replicated          0/4                 registry.achxis.com:8082/nejug:latest   *:30000->8009/tcp, *:30001->8080/tcp, *:30002->9443/tcp
-76cji6fsfb21        hippo_loadbalancer     replicated          1/1                 traefik:latest                          *:9090->8080/tcp, *:30003->80/tcp
-or7x4q5v21no        hippo_mysql-database   replicated          0/1                 mysql:5.6.36                            *:30004->3306/tcp
-
-```
