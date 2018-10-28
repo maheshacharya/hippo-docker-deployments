@@ -85,5 +85,5 @@ u63qa9leaegc        hippo_apache           replicated          1/1              
 h9136pezctbk        hippo_hippo            replicated          4/4                 maheshacharya/myhippoproject-docker-deployment-demo-mysql:latest   *:30040->8009/tcp, *:30041->8080/tcp, *:30042->9443/tcp
 c5in1wo7z62f        hippo_loadbalancer     replicated          1/1                 traefik:latest                                                     *:9090->8080/tcp, *:30043->80/tcp
 h5r6kunnq1py        hippo_mysql-database   replicated          1/1                 mysql:5.6.36                                                       *:30044->3306/tcp
-ubuntu@ip-172-31-16-48:~$ 
+
 ```
