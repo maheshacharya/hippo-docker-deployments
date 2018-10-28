@@ -77,21 +77,16 @@ spec:
         image: maheshacharya/myhippoproject-docker-deployment-demo-mysql
         ports:
         - containerPort: 8080
-        restartPolicy: Always
-        selector:
-          app: hippo-mysql-database
       - name: nginx
         image: maheshacharya/nginx
         ports:
         - containerPort: 80
-          targetPort: 80
         volumeMounts:
         - mountPath: /etc/nginx/sites-available/ 
           readOnly: true
           name: hippo-conf
         - mountPath: /var/log/nginx
           name: log
-        restartPolicy: Always
 ---
 apiVersion: apps/v1beta1
 kind: StatefulSet
@@ -155,4 +150,5 @@ spec:
     - port: 3306
   selector:
     app: mysql
+
 
