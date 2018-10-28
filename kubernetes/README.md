@@ -151,7 +151,7 @@ To deploy
 ---------
 First create a namespace, lets call it **hippo-test**
 ```
-kubectl create -ns hippo-test
+kubectl create namespace hippo-test
 ```
 
 Next, deploy the application to namespace **hippo-test**
