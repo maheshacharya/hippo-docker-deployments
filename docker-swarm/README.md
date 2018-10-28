@@ -8,7 +8,8 @@ Goals
 * Use [Traefik](https://traefik.io/) load balancer to acheive JSESSIONID based session affinity.
 * Use Apache(http) reverse proxy.
 
-
+Deploy the stack
+-----------------
 ```
 cd docker-swarm
 docker swarm init
