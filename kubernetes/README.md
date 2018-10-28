@@ -54,7 +54,7 @@ Hippo Pod
                                 |                                               |                                           
                          site.cloud-hub.co                               cms.cloud-hub.co  
 ```
-Kubernetes ingress is used as pure Load Balancer service, we will create a reverse proxy setup at Pod level using Nginx. Only port that is exposed from Hippo service is port 80 on nginx, Load Balancer will route traffix to Nginx, Nginx is configure to appropriately pass request to applicable context **/site** or **/cms**. This setup helps Hippo CMS Channel Manager work smoothly.
+Kubernetes ingress is used as pure Load Balancer service, we will create a reverse proxy setup at Pod level using Nginx. Only port that is exposed from Hippo service is port 80 on nginx, Load Balancer will route traffix to Nginx. Nginx is configured to appropriately pass request to applicable context **/site** or **/cms**. This setup helps Hippo CMS Channel Manager work smoothly.
 ```
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -99,6 +99,53 @@ spec:
           name: log
         restartPolicy: Always
 ```
+Config Map
+---------
+Config Mp is a way to manage all environmetal variables subjet to change per deployment. For example a reverse proxy configuration on *test* deployment could be different from *QA* and *Production* deployment.
+We are storing Nginx defalt.conf as a Config Map item.
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hippo-conf
+data:
+  hippo.conf: |
+    server {
+      listen       80;
+      server_name "cms.cloud-hub.co";
+      location / {
+        # Set headers for proxy header rewriting, like ProxyPassReverse in Apache http
+        # See http://wiki.nginx.org/LikeApache
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_pass http://localhost:8080/cms/;
+        proxy_redirect default;
+        proxy_cookie_path ~*^/.* /;
+      }
+      location /site/ {
+        proxy_set_header Host $host;
+        proxy_pass http://localhost:8080/site/;
+      }
+    }
+    server {
+      listen       80;
+      server_name "hippo.cloud-hub.co";
+      location / {
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_pass http://localhost:8080/site/;
+        proxy_redirect default;
+        proxy_cookie_path ~*^/.* /;
+      }
+    }
+
+```
+
 
 To deploy
 ---------
