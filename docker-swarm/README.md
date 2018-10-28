@@ -43,7 +43,7 @@ Container Images
 
 Apply Configuration Changes
 ---------------------------
-Modify default file under apache2/sites-available. to add proper server/domain name: Replace cloud-hub.co with your own server DNS name.
+Modify default file under **apache2/sites-available**. to add proper server/domain name: Replace **cloud-hub.co** with your own server DNS name.
 
 
 Deploy the stack
