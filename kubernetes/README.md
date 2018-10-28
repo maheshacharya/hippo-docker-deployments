@@ -156,7 +156,7 @@ kubectl create -ns hippo-test
 
 Next, deploy the application to namespace **hippo-test**
 ```
-kubectl create -f hippo-msql.yaml -n hippo-test
+kubectl create -f hippo-mysql.yaml -n hippo-test
 ```
 In order to access the service, you will have to install Ingress Controller and then create an ingress proxy service. 
 
