@@ -8,6 +8,14 @@ Goals
 * Use [Traefik](https://traefik.io/) load balancer to acheive JSESSIONID based session affinity.
 * Use Apache(http) reverse proxy.
 
+Our test platform specs
+---
+
+* Host VM -- Ubuntu 18.04 on AWS -- Single node VM (Master). 
+* Docker version: 18.06.1-ce
+* Hippo CMS version: 12.04
+
+
 Architecture
 ------------
 ```
