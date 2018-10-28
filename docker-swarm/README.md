@@ -11,7 +11,7 @@ Goals
 Our test platform specs
 ---
 
-* Host VM -- Ubuntu 18.04 on AWS -- Single node VM (Master). 
+* Host VM -- Ubuntu 18.04 on AWS -- Single node Swarm Cluster(Master). 
 * Docker version: 18.06.1-ce
 * Hippo CMS version: 12.04
 
