@@ -9,7 +9,7 @@ oc new-project hippo
 ```
 Deploy application
 ```
-cd kuberntes
+cd kubernetes
 oc create -f hippo-mysql.yml -n hippo
 ```
 
