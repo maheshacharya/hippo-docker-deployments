@@ -30,6 +30,12 @@ Architecture
                     |                              +-----------------------+                            
                                                                                     
 ```
+As illustrated in the above diagram, overall deployment architecture invcludes,
+* MySQL Service -- persietent data storage for Hippo CMS (Jacrabbit) Cluster.
+* Hippo Pod contains 
+  * Hippo CMS container
+  * Nginx Reverse Proxy container
+* Kubernetes Ingress for Load Balancing (with session affinity).   
 
 To deploy
 ---------
