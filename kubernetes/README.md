@@ -160,6 +160,17 @@ kubectl create -f hippo-mysql.yaml -n hippo-test
 ```
 In order to access the service, you will have to install Ingress Controller and then create an ingress proxy service. 
 
+Check for running pods
+----------------------
+```
+kubectl get pods -n hippo-test
+```
+Output
+```
+hippo-8677b459d9-vk4w4   2/2     Running   0          38s
+mysql-0                  1/1     Running   0          38s
+```
+
 References
 -------
 * Get started with Kubernetes: https://kubernetes.io/docs/
