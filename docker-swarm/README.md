@@ -56,7 +56,7 @@ Modify default file under **apache2/sites-available**. to add proper server/doma
 Preparation
 -----------
 * Copy "apache2" folder(incluing all sub folder/files) to $HOME directory. 
-    * You can also move to another location, but you wil have to change the path in yaml file. 
+    * You can also move to another location, but you will have to change the correspondig path in yaml file. 
 * Make "hippo/mysql" directory under $HOME directory, without this MySQL service will fail. 
 
 
