@@ -1,7 +1,7 @@
 # Hippo CMS -- Deployment using Kubernetes
 *Please note: Documentation is still being added to this page, I appreciate your patience.*
 
-When it comes to Kubernetes, we talk about pods, services etc. From principles of Kubernetes, a Pod is a unit of deployment: a pod can contain more than one container that can share same volume and can communicate with other containers on localhost. 
+When it comes to Kubernetes, we talk about pods, services etc. From principles of [Kubernetes](https://kubernetes.io/docs/concepts/workloads/pods/pod/), a Pod is a minimum unit of deployment: a pod can contain more than one container that can share same volume and can communicate with other containers on localhost. 
 
 Based on what we know about [Apache Jackrabbit](https://wiki.apache.org/jackrabbit/Clustering) cluster node specs (Hippo CMS uses Apache Jackrabbit repository), nodes in a cluster should have their own repository for maintaining the local repository index, therefore, a pod can contain only one Hippo CMS conatiner. 
 
