@@ -28,7 +28,7 @@ Our test platform specs
 * Docker Compose Version: 1.22.0  
 * Hippo CMS version: 12.04
 
-Hippo CMS Poject
+Hippo CMS Project
 ----------------
 We are using this project https://github.com/maheshacharya/hippo-docker-example
 This project has two maven profiles that enable building Docker Images. To use your own projects, you will have to build Docker Image of your projects and then deploy the images to [Docker Hub](https://hub.docker.com/) or to a private registry.
