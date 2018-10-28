@@ -80,8 +80,9 @@ Creating service hippo_hippo
 Creating service hippo_loadbalancer
 Creating service hippo_mysql-database
 ```
-Running ```docker service ls``` will show similar outout(below).
+Validated that services are running
 ---------
+Running ```docker service ls``` will show similar outout(below).
 
 ```
 ID                  NAME                   MODE                REPLICAS            IMAGE                                                              PORTS
@@ -114,7 +115,7 @@ overall progress: 8 out of 8 tasks
 verify: Service converged 
 
 ```
-Removiing the Stack
+Removing the Stack
 -----------------
 ```
 docker stack rm hippo
