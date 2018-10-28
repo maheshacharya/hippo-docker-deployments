@@ -102,7 +102,7 @@ spec:
 Config Map
 ---------
 Config Mp is a way to manage all environmetal variables subjet to change per deployment. For example a reverse proxy configuration on *test* deployment could be different from *QA* and *Production* deployment.
-We are storing Nginx defalt.conf as a Config Map item.
+We are storing Nginx defalt.conf as a Config Map item. In this case, just change *cms.cloud-hub.co* with an appliable server domain name. 
 ```
 apiVersion: v1
 kind: ConfigMap
