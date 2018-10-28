@@ -61,3 +61,14 @@ cd docker-swarm
 docker swarm init
 docker stack deploy -c docker-compose.yml hippo
 ```
+
+Successful deployment will show this output in terminal.
+```
+Creating network hippo_net
+Creating network hippo_mysql
+Creating network hippo_traefik
+Creating service hippo_apache
+Creating service hippo_hippo
+Creating service hippo_loadbalancer
+Creating service hippo_mysql-database
+```
