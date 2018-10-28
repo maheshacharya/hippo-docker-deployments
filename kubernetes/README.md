@@ -35,7 +35,26 @@ As illustrated in the above diagram, overall deployment architecture invcludes,
 * Hippo Pod contains 
   * Hippo CMS container
   * Nginx Reverse Proxy container
-* Kubernetes Ingress for Load Balancing (with session affinity).   
+* Kubernetes Ingress for Load Balancing (with session affinity).
+
+Hippo Pod
+-------------
+```
+        +------------------------------------------+    +------------------------------------------+                    
+        | Hippo Pod                                |    | Hippo Pod                                |                    
+        |                                          |    |                                          |                    
+        |  +----------+          +-------------+   |    |  +----------+          +-------------+   |                    
+        |  |Hippo CMS |          | Nginx       |   |    |  |Hippo CMS |          | Nginx       |   |                    
+        |  |        <-----------------         |   |    |  |        <-----------------         |   |                    
+        |  |     http://localhost:8080/site    |   |    |  |     http://localhost:8080/cms     |   |                    
+        |  +----------+          +------^------+   |    |  +----------+          +------^------+   |                    
+        |                               |          |    |                               |          |                    
+        +-------------------------------|----------+    +-------------------------------|----------+                    
+                                        |                                               |                               
+                                        |                                               |                               
+                                 site.cloud-hub.co                               cms.cloud-hub.co       
+```
+
 
 To deploy
 ---------
