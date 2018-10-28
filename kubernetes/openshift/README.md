@@ -10,7 +10,7 @@ oc new-project hippo
 Deploy application
 ```
 cd kubernetes
-oc create -f hippo-mysql.yml -n hippo
+oc create -f hippo-mysql.yaml -n hippo
 ```
 
 Create a Route for Hippo Service
