@@ -36,10 +36,10 @@ Architecture
 Container Images
 ------------------
 
-MySQL : https://hub.docker.com/_/mysql/
-Hippo Project: https://hub.docker.com/r/maheshacharya/myhippoproject-docker-deployment-demo-mysql/
-Apache2 : https://hub.docker.com/r/rgoyard/apache-proxy/
-Traefik: https://hub.docker.com/_/traefik/
+* MySQL : https://hub.docker.com/_/mysql/
+* Hippo Project: https://hub.docker.com/r/maheshacharya/myhippoproject-docker-deployment-demo-mysql/
+* Apache2 : https://hub.docker.com/r/rgoyard/apache-proxy/
+* Traefik: https://hub.docker.com/_/traefik/
 
 Apply Configuration Changes
 ---------------------------
