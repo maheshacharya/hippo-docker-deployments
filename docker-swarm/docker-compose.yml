@@ -33,7 +33,6 @@ services:
       - 443
     volumes:
       - "$HOME/apache2/sites-available/:/etc/apache2/sites-available/"
-      - "$HOME/ssl/:/etc/apache2/ssl/"
     networks:
       - net
       - mysql
@@ -46,7 +45,7 @@ services:
       update_config:
         delay: 4s 
   hippo:
-    image: registry.achxis.com:8082/nejug 
+    image: maheshacharya/myhippoproject-docker-deployment-demo-mysql 
     ports:
       - "8009"
       - "8080"
