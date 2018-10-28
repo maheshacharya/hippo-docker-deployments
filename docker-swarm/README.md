@@ -68,7 +68,9 @@ docker swarm init
 docker stack deploy -c docker-compose.yml hippo
 ```
 
-**Successful deployment will show this output in terminal.**
+Successful deployment will show this output in terminal.
+--------
+
 ```
 Creating network hippo_net
 Creating network hippo_mysql
@@ -78,7 +80,9 @@ Creating service hippo_hippo
 Creating service hippo_loadbalancer
 Creating service hippo_mysql-database
 ```
-**Running ```docker service ls``` will show similar outout(below).**
+Running ```docker service ls``` will show similar outout(below).
+---------
+
 ```
 ID                  NAME                   MODE                REPLICAS            IMAGE                                                              PORTS
 u63qa9leaegc        hippo_apache           replicated          1/1                 rgoyard/apache-proxy:latest                                        *:80->80/tcp, *:443->443/tcp
@@ -87,8 +91,10 @@ c5in1wo7z62f        hippo_loadbalancer     replicated          1/1              
 h5r6kunnq1py        hippo_mysql-database   replicated          1/1                 mysql:5.6.36                                                       *:30044->3306/tcp
 
 ```
-**Scaling Hippo CMS  to 8 containers.**
-make sure the underlying cluster VM has enough resources to support the new instances, othewrise, you can join more VM nodes to swram cluster to scale out and then scale the containers.
+Scaling Hippo CMS  to 8 containers.
+-------
+
+Make sure the underlying cluster VM has enough resources to support the new instances, othewrise, you can join more VM nodes to swram cluster to scale out and then scale the containers.
 ```
 docker service scale hippo_hippo=8
 ```
@@ -107,4 +113,20 @@ overall progress: 8 out of 8 tasks
 8/8: running   [==================================================>] 
 verify: Service converged 
 
+```
+Removiing the Stack
+-----------------
+```
+docker stack rm hippo
+
+```
+**Output**
+```
+Removing service hippo_apache
+Removing service hippo_hippo
+Removing service hippo_loadbalancer
+Removing service hippo_mysql-database
+Removing network hippo_mysql
+Removing network hippo_net
+Removing network hippo_traefik
 ```
