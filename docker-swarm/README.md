@@ -72,7 +72,7 @@ Creating service hippo_hippo
 Creating service hippo_loadbalancer
 Creating service hippo_mysql-database
 ```
-Run ```docker service ls``` will show similar outout(below).
+Running ```docker service ls``` will show similar outout(below).
 ```
 ID                  NAME                   MODE                REPLICAS            IMAGE                                                              PORTS
 u63qa9leaegc        hippo_apache           replicated          1/1                 rgoyard/apache-proxy:latest                                        *:80->80/tcp, *:443->443/tcp
