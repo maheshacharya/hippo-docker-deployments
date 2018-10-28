@@ -7,7 +7,7 @@ First create a namespace, lets call it **hippo-test**
 kubectl create -ns hippo-test
 ```
 
-Next, deploy the application
+Next, deploy the application to namespace **hippo-test**
 ```
 kubectl create -f hippo-deployment.yam -n hippo-test
 ```
