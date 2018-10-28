@@ -131,3 +131,6 @@ Removing network hippo_mysql
 Removing network hippo_net
 Removing network hippo_traefik
 ```
+References
+----------
+* Docker Swarm: https://docs.docker.com/engine/swarm/
