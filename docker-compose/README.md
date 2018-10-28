@@ -1,4 +1,4 @@
-Deploy Hippo CMS using Docker Compose
+Hippo CMS -- Deployment using Docker Compose
 =====================================
 [Hippo CMS](https://www.onehippo.org/) is one of the elegant yet sophisticated Open Source Java web application platform, procedures to properly deploy Hippo CMS application requires covering a lot of areas of Dev-Ops tooling and concepts. Hippo CMS uses Apache Jackrabbit JCR repository, achieving a scalable deployment procedure makes it a true enterprise-ready content management platform.
 
