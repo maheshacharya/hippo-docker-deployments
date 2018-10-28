@@ -95,7 +95,7 @@ Creating docker-compose_apache_1               ... done
 ```
 
 
-Remove Appication Stack
+Remove Application Stack
 -----------------------
 ```
 $ docker-compose down
