@@ -33,6 +33,17 @@ Architecture
     Reverse Proxy     |                        | Apache (httpd)   |
                                                +------------------+
 ```
+Container Images
+----------------
+MySQL : https://hub.docker.com/_/mysql/
+Hippo Project: https://hub.docker.com/r/maheshacharya/myhippoproject-docker-deployment-demo-mysql/
+Apache2 : https://hub.docker.com/r/rgoyard/apache-proxy/
+Traefik: https://hub.docker.com/_/traefik/
+Apply Configuration Changes
+---------------------------
+Modify default file under apache2/sites-available. to add proper server/domain name: Replace cloud-hub.co with your own server DNS name.
+
+
 Deploy the stack
 -----------------
 ```
