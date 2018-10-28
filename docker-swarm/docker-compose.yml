@@ -1,21 +1,72 @@
-version: "3"
+version: '3'
 services:
-  hippo:
-    image: maheshacharya/myhippoproject-docker-deployment-demo
-    networks:
-      - net
+  mysql-database:
+    image: mysql:5.6.36
+    environment:
+      - MYSQL_ROOT_PASSWORD=hippo
+      - MYSQL_DATABASE=hippo
+      - MYSQL_PASSWORD=hippo
+      - MYSQL_USER=hippo
+      - ON_CREATE_DB="hippo"
+    command: mysqld --max_allowed_packet=90M
     ports:
-      - 8080
+      - "3306"
+    volumes:
+      - "$HOME/hippo/mysql:/var/lib/mysql" 
+    networks:
+      - mysql
+      - net
     deploy:
       restart_policy:
         condition: any
       mode: replicated
-      replicas: 2
+      replicas: 1 
       update_config:
-        delay: 2s
+        delay: 4s 
+  apache:
+    image: rgoyard/apache-proxy
+    ports:
+      - '80:80'
+      - '443:443'
+    expose:
+      - 80
+      - 443
+    volumes:
+      - "$HOME/apache2/sites-available/:/etc/apache2/sites-available/"
+      - "$HOME/ssl/:/etc/apache2/ssl/"
+    networks:
+      - net
+      - mysql
+      - traefik
+    deploy:
+      restart_policy:
+        condition: any
+      mode: replicated
+      replicas: 1
+      update_config:
+        delay: 4s 
+  hippo:
+    image: registry.achxis.com:8082/nejug 
+    ports:
+      - "8009"
+      - "8080"
+      - "9443"
+    networks:
+      - net
+      - mysql
+      - traefik
+    deploy:
+      restart_policy:
+        condition: any
+      mode: replicated
+      replicas: 4
+      update_config:
+        delay: 4s
       labels:
+        - "mysql-database.docker.network=hippo_mysql"
+        - "mysql-database.port=3306"
         - "com.docker.lb.sticky_session_cookie=JSESSIONID"
-        - "traefik.docker.network=hippo_net"
+        - "traefik.docker.network=hippo_traefik"
         - "traefik.port=8080"
         - "traefik.frontend.rule=PathPrefix:/"
         - "traefik.backend.loadbalancer.stickiness=true"
@@ -27,7 +78,7 @@ services:
       --web \
       --loglevel=DEBUG
     ports:
-      - 8080:80
+      - 80
       - 9090:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -37,10 +88,17 @@ services:
       mode: replicated
       replicas: 1
       update_config:
-        delay: 2s
+        delay: 4s
       placement:
          constraints: [node.role == manager]
+      labels:
+        - "apache.docker.network=hippo_net"
+        - "apache.port=80"
     networks:
       - net
+      - mysql
+      - traefik
 networks:
   net:
+  traefik:
+  mysql:
