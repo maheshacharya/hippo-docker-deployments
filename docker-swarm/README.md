@@ -68,7 +68,7 @@ docker swarm init
 docker stack deploy -c docker-compose.yml hippo
 ```
 
-Successful deployment will show this output in terminal.
+**Successful deployment will show this output in terminal.**
 ```
 Creating network hippo_net
 Creating network hippo_mysql
@@ -78,12 +78,32 @@ Creating service hippo_hippo
 Creating service hippo_loadbalancer
 Creating service hippo_mysql-database
 ```
-Running ```docker service ls``` will show similar outout(below).
+**Running ```docker service ls``` will show similar outout(below).**
 ```
 ID                  NAME                   MODE                REPLICAS            IMAGE                                                              PORTS
 u63qa9leaegc        hippo_apache           replicated          1/1                 rgoyard/apache-proxy:latest                                        *:80->80/tcp, *:443->443/tcp
 h9136pezctbk        hippo_hippo            replicated          4/4                 maheshacharya/myhippoproject-docker-deployment-demo-mysql:latest   *:30040->8009/tcp, *:30041->8080/tcp, *:30042->9443/tcp
 c5in1wo7z62f        hippo_loadbalancer     replicated          1/1                 traefik:latest                                                     *:9090->8080/tcp, *:30043->80/tcp
 h5r6kunnq1py        hippo_mysql-database   replicated          1/1                 mysql:5.6.36                                                       *:30044->3306/tcp
+
+```
+**Scaling Hippo CMS  to 8 containers.**
+```
+docker service scale hippo_hippo=8
+```
+**Output**
+
+```
+hippo_hippo scaled to 8
+overall progress: 8 out of 8 tasks 
+1/8: running   [==================================================>] 
+2/8: running   [==================================================>] 
+3/8: running   [==================================================>] 
+4/8: running   [==================================================>] 
+5/8: running   [==================================================>] 
+6/8: running   [==================================================>] 
+7/8: running   [==================================================>] 
+8/8: running   [==================================================>] 
+verify: Service converged 
 
 ```
