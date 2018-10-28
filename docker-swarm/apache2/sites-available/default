@@ -1,0 +1,43 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    ServerName cms.cloud-hub.co
+    ProxyPreserveHost Off
+    RewriteEngine on
+    # RewriteRule ^/site/(.*)$ /$1 [R=301]
+
+    #INCLUDE THE EXTRA PROXYPASS RULE FOR /site HERE
+    ProxyPass /site/ http://loadbalancer/site/
+    ProxyPass / http://loadbalancer/cms/
+    ProxyPassReverse / http://loadbalancer/cms/
+    ProxyPassReverseCookiePath /cms /
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerAdmin info@localhost
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    
+   
+    ServerName site.cloud-hub.co
+    # everthing that does not match cms.example.com also goes to the site application
+    ServerAlias *.cloud-hub.co
+
+    <Location />
+            Order deny,allow
+            Allow from all
+     </Location>
+    
+    ProxyPreserveHost  On
+    RewriteEngine on
+    RewriteRule ^/site/(.*)$ /$1 [P]
+
+    ProxyPass  / http://loadbalancer:80/site/
+    ProxyPassReverse  / http://loadbalancer:80/site/
+    ProxyPassReverseCookiePath  /site /
+    ProxyPassreverseCookieDomain localhost site.cloud-hub.co
+</VirtualHost>
