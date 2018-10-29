@@ -53,7 +53,7 @@ Hippo Pod
                                 |                                               |              
                          site.cloud-hub.co                               cms.cloud-hub.co      
 ```
-Kubernetes ingress is used as pure Load Balancer service, we will create a reverse proxy setup at Pod level using Nginx. The only port that is exposed from Hippo service is port 80 on Nginx. The Load Balancer will route traffic to Nginx. Nginx is configured to appropriately pass request to applicable context **/site** or **/cms**. This setup helps Hippo CMS Channel Manager work smoothly.
+Kubernetes ingress is used as pure Load Balancer service, we will create a reverse proxy setup at Pod level using Nginx. The only port that is exposed from Hippo service is port 80 on Nginx. The Load Balancer will route traffic to Nginx. Nginx is configured to appropriately pass request to applicable context **/site** or **/cms**. This setup helps the Channel Manager in CMS work without any issues.
 ```
 apiVersion: extensions/v1beta1
 kind: Deployment
