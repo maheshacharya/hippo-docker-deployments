@@ -110,7 +110,8 @@ spec:
 Config Map
 ---------
 [Config Map](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) is a way to manage all environmental variables subject to change per deployment. For example, a reverse proxy configuration on *test* deployment could be different from *QA* and *Production* deployments.
-We are storing Nginx default.conf as a Config Map item. In this case, just change *cms.cloud-hub.co* and *site.cloud-hub.co* with an applicable server domain name. 
+We are storing Nginx default.conf as a Config Map item. In this case, just change *cms.cloud-hub.co* and *site.cloud-hub.co* with an applicable server domain name.
+
 Nginx reverse proxy example: https://www.onehippo.org/labs/configuring-nginx-as-a-reverse-proxy-for-hippo-cms.html
 ```
 apiVersion: v1
