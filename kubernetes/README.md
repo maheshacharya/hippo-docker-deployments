@@ -187,9 +187,17 @@ Scaling Pods
 -------
 To run 4 set of replicas of Hippo Pod (Hippo CMS + Nginx) use the command below.
 ```
- kubectl scale  --replicas=4 deployment/hippo -n hippo
+ kubectl scale  --replicas=4 deployment/hippo -n hippo-test
 ```
-
+After scaling, ```kubectl get pods -n hippo-test``` should list result like below.
+```
+NAME                     READY   STATUS    RESTARTS   AGE
+hippo-8677b459d9-4zfh6   2/2     Running   0          119s
+hippo-8677b459d9-c9f2z   2/2     Running   0          119s
+hippo-8677b459d9-pfhgx   2/2     Running   0          119s
+hippo-8677b459d9-vk4w4   2/2     Running   0          3h56m
+mysql-0                  1/1     Running   0          3h56m
+```
 
 Ingress 
 --------
