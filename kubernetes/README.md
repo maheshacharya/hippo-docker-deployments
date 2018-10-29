@@ -183,6 +183,28 @@ hippo                  ClusterIP   10.106.52.158   <none>        80/TCP     2m34
 hippo-mysql-database   ClusterIP   10.108.6.70     <none>        3306/TCP   2m34s
 ```
 
+Ingress 
+--------
+```
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hippo-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "route"
+    nginx.ingress.kubernetes.io/session-cookie-hash: "sha1"
+
+spec:
+  rules:
+  - host: "*.cloud-hub.co"
+    http:
+      paths:
+      - backend:
+          serviceName: hippo
+          servicePort: 80
+        path: /
+```
 
 References
 -------
