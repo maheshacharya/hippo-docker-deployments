@@ -4,6 +4,15 @@ When it comes to Kubernetes, we talk about pods, services etc. From principles o
 
 Based on what we know about [Apache Jackrabbit](https://wiki.apache.org/jackrabbit/Clustering) cluster node specs (Hippo CMS uses Apache Jackrabbit repository), nodes in a cluster should have their own repository for maintaining the local repository index, therefore, a **Pod** can contain only one instance of Hippo CMS container. 
 
+Test platform specs
+-------
+Single Node Kubernetes Cluster -- on AWS
+* OS: Ubuntu 18.04.1 LTS x86_64 
+* CPU: Intel Xeon E5-2676 v3 (4) @ 2.399GHz 
+* Memory: 16039MiB 
+* Kubernetes Version: v1.12.2
+* Docker  Version: 18.06.1-ce
+
 
 Architecture
 ----------
