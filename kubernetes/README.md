@@ -224,6 +224,30 @@ spec:
           servicePort: 80
         path: /
 ```
+Inspect Ingress Confguration
+--------
+```
+kubectl describe ingress hippo-ingress -n hippo-test
+```
+Output
+```
+Name:             hippo-ingress
+Namespace:        hippo
+Address:          
+Default backend:  default-http-backend:80 (<none>)
+Rules:
+  Host            Path  Backends
+  ----            ----  --------
+  *.cloud-hub.co  
+                  /   hippo:80 (<none>)
+Annotations:
+  nginx.ingress.kubernetes.io/session-cookie-name:  route
+  nginx.ingress.kubernetes.io/affinity:             cookie
+  nginx.ingress.kubernetes.io/session-cookie-hash:  sha1
+Events:                                             <none>
+```
+
+
 Having Trouble with Ingress configuration? 
 --------------
 Checkout this : https://kubernetes.github.io/ingress-nginx/troubleshooting/
