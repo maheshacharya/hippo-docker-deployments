@@ -183,6 +183,13 @@ NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 hippo                  ClusterIP   10.106.52.158   <none>        80/TCP     2m34s
 hippo-mysql-database   ClusterIP   10.108.6.70     <none>        3306/TCP   2m34s
 ```
+Scaling Pods
+-------
+To run 4 set of replicas of Hippo Pod (Hippo CMS + Nginx) use the command below.
+```
+ kubectl scale  --replicas=4 deployment/hippo -n hippo
+```
+
 
 Ingress 
 --------
