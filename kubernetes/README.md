@@ -205,6 +205,9 @@ spec:
           servicePort: 80
         path: /
 ```
+Having Trouble with Ingress configuration? 
+--------------
+Checkout this : https://kubernetes.github.io/ingress-nginx/troubleshooting/
 
 References
 -------
