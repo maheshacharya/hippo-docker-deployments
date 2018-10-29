@@ -1,9 +1,9 @@
 # Hippo CMS -- Deployment using Kubernetes
 *Please note: The documentation is still being added to this page, I appreciate your patience.*
 
-When it comes to Kubernetes, we talk about pods, services etc. From principles of [Kubernetes](https://kubernetes.io/docs/concepts/workloads/pods/pod/), a **Pod** is a minimum unit of deployment: a **Pod** can contain more than one container that can share same volume and can communicate with other containers on localhost. 
+When it comes to Kubernetes, we talk about pods, services etc. From principles of [Kubernetes](https://kubernetes.io/docs/concepts/workloads/pods/pod/), a **Pod** is a minimum unit of deployment: a **Pod** can contain more than one container that can share the same volume and can communicate with other containers on localhost. 
 
-Based on what we know about [Apache Jackrabbit](https://wiki.apache.org/jackrabbit/Clustering) cluster node specs (Hippo CMS uses Apache Jackrabbit repository), nodes in a cluster should have their own repository for maintaining the local repository index, therefore, a pod can contain only one Hippo CMS conatiner. 
+Based on what we know about [Apache Jackrabbit](https://wiki.apache.org/jackrabbit/Clustering) cluster node specs (Hippo CMS uses Apache Jackrabbit repository), nodes in a cluster should have their own repository for maintaining the local repository index, therefore, a pod can contain only one Hippo CMS container. 
 
 
 Architecture
@@ -54,7 +54,7 @@ Hippo Pod
                                 |                                               |              
                          site.cloud-hub.co                               cms.cloud-hub.co      
 ```
-Kubernetes ingress is used as pure Load Balancer service, we will create a reverse proxy setup at Pod level using Nginx. Only port that is exposed from Hippo service is port 80 on nginx, Load Balancer will route trafic to Nginx. Nginx is configured to appropriately pass request to applicable context **/site** or **/cms**. This setup helps Hippo CMS Channel Manager work smoothly.
+Kubernetes ingress is used as pure Load Balancer service, we will create a reverse proxy setup at Pod level using Nginx. The only port that is exposed from Hippo service is port 80 on Nginx. The Load Balancer will route traffic to Nginx. Nginx is configured to appropriately pass request to applicable context **/site** or **/cms**. This setup helps Hippo CMS Channel Manager work smoothly.
 ```
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -101,8 +101,8 @@ spec:
 ```
 Config Map
 ---------
-[Config Map](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) is a way to manage all environmetal variables subjet to change per deployment. For example a reverse proxy configuration on *test* deployment could be different from *QA* and *Production* deployment.
-We are storing Nginx defalt.conf as a Config Map item. In this case, just change *cms.cloud-hub.co* and *site.cloud-hub.co* with an appliable server domain name. 
+[Config Map](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) is a way to manage all environmental variables subject to change per deployment. For example, a reverse proxy configuration on *test* deployment could be different from *QA* and *Production* deployment.
+We are storing Nginx defalt.conf as a Config Map item. In this case, just change *cms.cloud-hub.co* and *site.cloud-hub.co* with an applicable server domain name. 
 Nginx reverse proxy example: https://www.onehippo.org/labs/configuring-nginx-as-a-reverse-proxy-for-hippo-cms.html
 ```
 apiVersion: v1
