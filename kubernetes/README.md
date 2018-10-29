@@ -201,6 +201,8 @@ mysql-0                  1/1     Running   0          3h56m
 
 Ingress 
 --------
+Why not use Node Port or Load Balancer options to expose the service? the only challenge here is the session affinity based of a server managed entity such as JSESSIONID or ROUTE_ID, Load Balance do offer session affinity based on client IP, which is not good for Hippo CMS, image yourself roaming with hopping in and out of different networks, each time your network changes, you will have new IP and the app will prompt you for re-login -- annoying right? That is why we have to use the Ingress. 
+
 ```
 apiVersion: extensions/v1beta1
 kind: Ingress
