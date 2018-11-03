@@ -14,6 +14,7 @@ oc new-project hippo
 ```
 Enable security context for non-root user for applications
 -----
+without this you will run into permission [issue](https://github.com/rook/rook/issues/1314) 
 ```
 docker exec origin oc adm policy add-scc-to-user anyuid -z default -n hippo
 ```
