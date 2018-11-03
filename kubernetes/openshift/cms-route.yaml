@@ -3,7 +3,7 @@ kind: Route
 metadata:
   name: cms
   namespace: hippo
-  spec:
+spec:
   host: cms.cloud-hub.co
   port:
     targetPort: '80'
