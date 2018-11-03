@@ -17,6 +17,16 @@ Deploy application
 cd kubernetes
 oc create -f hippo-mysql.yaml -n hippo
 ```
+Output
+-----
+```
+configmap "hippo-conf" created
+deployment "hippo" created
+statefulset "mysql" created
+service "hippo" created
+service "hippo-mysql-database" created
+```
+
 
 Create a Route for Hippo Service
 ------
