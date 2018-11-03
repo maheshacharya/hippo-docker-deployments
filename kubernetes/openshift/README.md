@@ -65,5 +65,22 @@ Create a Route for Hippo Service
 ------
 Change directory to 'openshift' and run following commands. 
 Please note: change "site.cloud-hub.co" and "cms.cloud-hub.co" domain name with your own domain names for site and cms. 
-
+```
+oc create -f site-route.yaml -f  cms-route.yaml -n hippo
+```
+Output
+```
+route "site" created
+route "cms" created
+```
+Check for routes
+```
+oc get routes
+```
+Output
+```
+NAME      HOST/PORT           PATH      SERVICES   PORT      TERMINATION   WILDCARD
+cms       cms.cloud-hub.co              hippo      80                      None
+site      site.cloud-hub.co             hippo      80                      None
+```
 
