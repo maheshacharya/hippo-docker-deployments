@@ -64,6 +64,8 @@ hippo-mysql-database   ClusterIP   172.30.222.113   <none>        3306/TCP   2m
 
 Create a Route for Hippo Service
 ------
+To expose services to the outside world, you will have to use routes in OpenShift. Ingress controller setup is always challenging in Kubernetes, OpenShift simplifies the challenge through routes configuration, I have also noticed the routes by default maintain the stickiness to pods. 
+
 Change directory to 'openshift' and run following commands. 
 
 Please note: change "site.cloud-hub.co" and "cms.cloud-hub.co" domain name with your own domain names for site and cms. 
