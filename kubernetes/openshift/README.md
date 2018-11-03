@@ -63,4 +63,5 @@ hippo-mysql-database   ClusterIP   172.30.222.113   <none>        3306/TCP   2m
 
 Create a Route for Hippo Service
 ------
-TBD
+Change directory to 'openshift' and run following commands. 
+
