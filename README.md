@@ -19,6 +19,7 @@ The key objective here is to seperate the scalable deployment concernes from the
            |                         |               
            |                         |                
   +--------------------------------------------+     
+  |        |                         |         |
   |  +------------+            +-----------+   |      
   |  |    CMS     |            |   Site    |   |      
   |  +------------+            +-----------+   |      
