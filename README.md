@@ -11,6 +11,31 @@ TBD (Stay Tuned ... currently working on it)
  * [Rancher]
 
 The key objective here is to seperate the scalable deployment concernes from the core application itself, thus, changes to the application platform should not influence the deployment model as long as [Hippo CMS architecture](https://www.onehippo.org/library/architecture/hippo-cms-architecture.html) remains the same.
+```
+                                                                                                                             
+       +-------+                +-------+                                                                                   
+       |Browser|                |Browser|                                                                                          +-------+                +-------+                                                                                   
+           |                         |                                                                                       
+           |                         |                                                                                       
+  +--------------------------------------------+                                                                             
+  |  +------------+            +-----------+   |                                                                             
+  |  |    CMS     |            |   Site    |   |                                                                             
+  |  +------------+            +-----------+   |                                                                             
+  |        |                         |         |                                                                             
+  |        |-------------------------|         |                                                                             
+  |                     |                      |                                                                             
+  |                     |                      |                                                                             
+  |          +--------------------+            |                                                                             
+  |          |   JCR Repository   |            |                                                                             
+  |          +--------------------+            |                                                                             
+  |                     |                      |                                                                             
+  |                     |                      |                                                                             
+  |          +--------------------+            |                                                                             
+  |          |        RDBMS       |            |                                                                             
+  |          +--------------------+            |                                                 +                           
+  +--------------------------------------------+                                                                             
+                                                     
+```
 
 Desclaimer
 ==========
