@@ -12,6 +12,12 @@ Create new project on your OpenShift cluster.
 ```
 oc new-project hippo
 ```
+Enable security context for non-root user for applications
+-----
+```
+docker exec origin oc adm policy add-scc-to-user anyuid -z default -n hippo
+```
+
 Deploy application
 ```
 cd kubernetes
