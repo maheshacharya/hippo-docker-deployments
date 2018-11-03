@@ -80,7 +80,7 @@ Creating service hippo_hippo
 Creating service hippo_loadbalancer
 Creating service hippo_mysql-database
 ```
-Validated that services are running
+Verifying the running services 
 ---------
 Running ```docker service ls``` will show similar outout(below).
 
