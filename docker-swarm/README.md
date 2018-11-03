@@ -5,7 +5,7 @@ Goals
 -----
 * Use MySQL persistence storage for the repository.
 * Start the cluster with 4 containers of Hippo CMS.
-* Use [Traefik](https://traefik.io/) load balancer to acheive JSESSIONID based session affinity.
+* Use [Traefik](https://traefik.io/) load balancer to achieve JSESSIONID based session affinity.
 * Use Apache(http) reverse proxy.
 
 Our test platform specs
