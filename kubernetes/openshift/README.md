@@ -3,7 +3,8 @@ Kubetnetes is great, but OpenShift makes Kubernetes even simpler and manageable 
 
 How to install OpenShift Origin on Ubuntu 18.04?
 -----------------------------------------------
-Checkout this article: 
+Checkout this article:
+
 https://medium.com/@maheshacharya_44641/install-openshift-origin-on-ubuntu-18-04-7b98773c2ee6
 
 To Deploy 
