@@ -66,7 +66,7 @@ hippo-mysql-database   ClusterIP   172.30.222.113   <none>        3306/TCP   2m
 
 Create a Route for Hippo Service
 ------
-In Kubernetes and OpenShift, the services by default are not exposed on the host ports. To expose services to the outside world on specific ports, you will have to use routes in OpenShift. Ingress controller setup is always challenging in Kubernetes, OpenShift simplifies the challenge through routes configuration, I have also noticed the routes by default maintain the stickiness to pods. 
+In Kubernetes and in OpenShift, the services by default are not exposed on the host ports. To expose services to the outside world on specific ports, you will have to use routes in OpenShift. Ingress controller setup is always challenging in Kubernetes, OpenShift simplifies the challenge through routes configuration, I have also noticed the routes by default maintain the stickiness to pods. 
 
 Change directory to 'openshift' and run following commands. 
 
