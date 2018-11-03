@@ -83,4 +83,19 @@ NAME      HOST/PORT           PATH      SERVICES   PORT      TERMINATION   WILDC
 cms       cms.cloud-hub.co              hippo      80                      None
 site      site.cloud-hub.co             hippo      80                      None
 ```
+Scaling Hippo Pods
+-------
+Lets run 4 instances of Hippo pods -- which means, we will be running 4 Hippo CMS instances.
+```
+oc scale  --replicas=4 deployment/hippo -n hippo
+```
+```oc get pods``` command will show following results
+```
+hippo-7dc69df6d-fzpdb   2/2       Running   0          9s
+hippo-7dc69df6d-m7bwk   2/2       Running   0          9s
+hippo-7dc69df6d-wknw8   2/2       Running   0          9s
+hippo-7dc69df6d-zxtcq   2/2       Running   0          34m
+mysql-0                 1/1       Running   0          34m
+```
+
 
