@@ -8,7 +8,6 @@ metadata:
     ingress.kubernetes.io/session-cookie-name: route
     kubernetes.io/ingress.class: nginx
   labels:
-    cattle.io/creator: norman
   name: site
 spec:
   rules:
