@@ -39,6 +39,7 @@ Check for running pods
 oc get pods
 ```
 Output
+
 Basically, we have two pods running 
 * Hippo (Pod) -- has 2 containers
   * Hippo CMS (Container)
@@ -64,6 +65,7 @@ hippo-mysql-database   ClusterIP   172.30.222.113   <none>        3306/TCP   2m
 Create a Route for Hippo Service
 ------
 Change directory to 'openshift' and run following commands. 
+
 Please note: change "site.cloud-hub.co" and "cms.cloud-hub.co" domain name with your own domain names for site and cms. 
 ```
 oc create -f site-route.yaml -f  cms-route.yaml -n hippo
