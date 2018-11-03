@@ -91,6 +91,7 @@ oc scale  --replicas=4 deployment/hippo -n hippo
 ```
 ```oc get pods``` command will show following results
 ```
+NAME                    READY     STATUS    RESTARTS   AGE
 hippo-7dc69df6d-fzpdb   2/2       Running   0          9s
 hippo-7dc69df6d-m7bwk   2/2       Running   0          9s
 hippo-7dc69df6d-wknw8   2/2       Running   0          9s
