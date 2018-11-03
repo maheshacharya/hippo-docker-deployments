@@ -50,7 +50,7 @@ Basically, we have two pods running
 * Hippo (Pod) -- has 2 containers
   * Hippo CMS (Container)
   * Nginx Reverse Proxy (Container)
-* MySQL (Pod) -- has 1 container
+* mysql (Pod) -- has 1 container
 
 Check for services
 --------
