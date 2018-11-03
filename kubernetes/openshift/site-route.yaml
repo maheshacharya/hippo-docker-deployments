@@ -1,0 +1,20 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: site
+  namespace: hippo
+spec:
+  host: site.cloud-hub.co
+  port:
+    targetPort: '80'
+  to:
+    kind: Service
+    name: hippo
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+    - conditions:
+      host: site.cloud-hub.co
+      routerName: router
+      wildcardPolicy: None
