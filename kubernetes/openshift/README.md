@@ -64,4 +64,6 @@ hippo-mysql-database   ClusterIP   172.30.222.113   <none>        3306/TCP   2m
 Create a Route for Hippo Service
 ------
 Change directory to 'openshift' and run following commands. 
+Please note: change "site.cloud-hub.co" and "cms.cloud-hub.co" domain name with your own domain names for site and cms. 
+
 
