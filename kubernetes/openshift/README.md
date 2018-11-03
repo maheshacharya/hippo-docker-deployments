@@ -101,5 +101,5 @@ hippo-7dc69df6d-zxtcq   2/2       Running   0          34m
 mysql-0                 1/1       Running   0          34m
 ```
 
-Although Pods start up quickly, the actual Hippo CMS instance maybe not be immediately available, depending on the size of the database, it might take some time to build local repository index within the container. Its useful to add system availabilty check by using Hippo's [Ping Servlet](https://www.onehippo.org/library/administration/servlets-in-use.html)
+Although Pods start up quickly, the actual Hippo CMS instance maybe not be immediately available, depending on the size of the database, it might take some time to build local repository index within the container. Its useful to add system availabilty check by using Hippo's [Ping Servlet](https://www.onehippo.org/library/administration/servlets-in-use.html).
 
