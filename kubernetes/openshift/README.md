@@ -33,7 +33,17 @@ statefulset "mysql" created
 service "hippo" created
 service "hippo-mysql-database" created
 ```
-
+Check for running pods
+--------
+```
+oc get pods
+```
+Output
+```
+NAME                    READY     STATUS    RESTARTS   AGE
+hippo-7dc69df6d-zxtcq   2/2       Running   0          25s
+mysql-0                 1/1       Running   0          25s
+```
 
 Create a Route for Hippo Service
 ------
