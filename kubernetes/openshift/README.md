@@ -1,5 +1,5 @@
 # Hippo CMS -- OpenShift Deployment
-Kubetnetes is great, but OpenShift makes Kubernetes even simpler and manageable especially when we talk about managing 100's of pods and services.
+Kubetnetes is great, but OpenShift makes Kubernetes even simpler and manageable especially when we talk about managing 100's of pods and services. OpenShift enables deployment through web application console, however, we will be using 'oc' commmand to perform deployment process.
 
 How to install OpenShift Origin on Ubuntu 18.04?
 -----------------------------------------------
