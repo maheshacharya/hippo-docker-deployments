@@ -9,11 +9,12 @@ There are multiple ways to install and start rancher -- all depends on whether y
 https://rancher.com/docs/rancher/v2.x/en/installation/
 
 For our test installation, we ran this command below:
-
-> docker run -d --restart=unless-stopped \
+```
+  docker run -d --restart=unless-stopped \
   -p 80:80 -p 443:443 \
   -v /host/rancher:/var/lib/rancher \
   rancher/rancher:latest
+``` 
 
 The above command will install Rancher with persitent data volume on the host system.
 
