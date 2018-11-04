@@ -59,6 +59,12 @@ Related References:
 * [Build Docker Images of your Hippo CMS project](https://medium.com/@maheshacharya_44641/hippo-cms-docker-containerization-703e2e4e496c).
 
 * [Install OpenShift Origin on Ubuntu 18.04](https://medium.com/@maheshacharya_44641/install-openshift-origin-on-ubuntu-18-04-7b98773c2ee6).
+* [Rancher 2.0 Documentation](https://rancher.com/docs/rancher/v2.x/en/)
+* [Docker Swarm](https://docs.docker.com/engine/swarm/).
+* [Hippo CMS Documentation](https://www.onehippo.org/library/about/introduction-hippo.html)
+* [Kubernetes Documentation](https://kubernetes.io/docs/home/?path=browse)
+* [Docker Getting Started](https://docs.docker.com/get-started/)
+* [Traefik](https://docs.traefik.io/)
 
 
 Desclaimer
