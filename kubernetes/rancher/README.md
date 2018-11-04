@@ -50,8 +50,9 @@ statefulset.apps "mysql" created
 service "hippo" created
 service "hippo-mysql-database" created
 
-```
+
 > kubectl get pods -n hippo
+```
 NAME                    READY     STATUS    RESTARTS   AGE
 hippo-58b8d5b67-j6tfn   2/2       Running   0          47s
 mysql-0                 1/1       Running   0          47s
@@ -62,6 +63,8 @@ Check all running services in namespace 'hippo'
 ```
 
 > kubectl get services -n hippo
+
+```
 NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 hippo                  ClusterIP   10.43.250.54    <none>        80/TCP     1m
 hippo-mysql-database   ClusterIP   10.43.191.101   <none>        3306/TCP   1m
@@ -72,6 +75,8 @@ In the rancher UI move 'hippo' namespace under a new project "hippo-demo"
 
 ```
 > kubectl create -f hippo-ingress.yaml -n hippo
+```
+```
 ingress.extensions "cms" created
 ingress.extensions "site" created
 ```
