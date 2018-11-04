@@ -68,7 +68,6 @@ Check all running services in namespace 'hippo'
 NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 hippo                  ClusterIP   10.43.250.54    <none>        80/TCP     1m
 hippo-mysql-database   ClusterIP   10.43.191.101   <none>        3306/TCP   1m
-
 ```
 
 In the rancher UI move 'hippo' namespace under a new project "hippo-demo"
