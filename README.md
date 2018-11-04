@@ -54,6 +54,11 @@ The key objective here is to seperate the scalable deployment concernes from the
   +--------------------------------------------+    
 ```
 
+Related References:
+======
+Build Docker Images of your Hippo CMS project:
+https://medium.com/@maheshacharya_44641/hippo-cms-docker-containerization-703e2e4e496c
+
 Desclaimer
 ==========
 * All ideas and concepts presented here are my own and may NOT have been tested, approved and supported by the parent company of Hippo CMS.
