@@ -30,6 +30,7 @@ Application Deployment
 Once the cluster is ready, copy the kubectl.config to your local machine or run commands directly on Rancher terminal. 
 
 create a hippo-mysql.yml with content from this file.
+
 https://github.com/maheshacharya/hippo-docker-deployments/blob/master/kubernetes/hippo-mysql.yaml
 
 Deploy hippo-mysql.yaml
