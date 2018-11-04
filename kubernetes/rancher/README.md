@@ -32,7 +32,7 @@ Once the cluster is ready, copy the kubectl.config to your local machine or run 
 create a hippo-mysql.yml with content from this file.
 https://github.com/maheshacharya/hippo-docker-deployments/blob/master/kubernetes/hippo-mysql.yaml
 
-Run [hippo-mysql.yaml](https://github.com/maheshacharya/hippo-docker-deployments/tree/master/kubernetes)
+Deploy hippo-mysql.yaml
 
 Create namespace 'hippo'
 
