@@ -11,7 +11,7 @@ metadata:
   name: site
 spec:
   rules:
-  - host: rancher-site.cloud-hub.co
+  - host: site.cloud-hub.co
     http:
       paths:
       - backend:
