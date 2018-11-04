@@ -7,7 +7,14 @@ I have been working with Hippo CMS platform since early 2015. Hippo CMS is by fa
   * Use Sonatype Nexus Repository as private registry to store Docker Images. 
 * Run scalable application cluster with Horizontally scalable infrastructure.
 
-After stalling and failing for years, I finally have the recipe for successfully deploying Hippo CMS as a Dockerized Container using Docker Compose, Docker Swarm and Kubernetes (using OpenShift and Rancher). 
+After stalling and failing for years, I finally have the recipe for successfully deploying Hippo CMS as a Dockerized Container using, 
+* Docker Compose
+* Docker Swarm and 
+* Kubernetes 
+ * OpenShift 
+ * Rancher 
+
+While Docker Compose is great for running test and demo clusters, Docker Swarm and Kubernetes could be a great fit for Prodution cluster. Using Openshift and Rancher Orchestration platforms -- you can even run multiple clusters (multi tenant) of the same application and manage them more elegantly and effortlessly. 
 
 Using these deployment schemes, you can achieve run highly scalable cluster of web applications. Using Kubernetes, you can ahieve even dynamic auto scaling capabilities. 
 
