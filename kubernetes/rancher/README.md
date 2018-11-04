@@ -73,9 +73,9 @@ hippo-mysql-database   ClusterIP   10.43.191.101   <none>        3306/TCP   1m
 
 In the rancher UI move 'hippo' namespace under a new project "hippo-demo"
 
-```
+
 > kubectl create -f hippo-ingress.yaml -n hippo
-```
+
 ```
 ingress.extensions "cms" created
 ingress.extensions "site" created
