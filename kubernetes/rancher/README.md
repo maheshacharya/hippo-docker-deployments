@@ -10,7 +10,7 @@ https://rancher.com/docs/rancher/v2.x/en/installation/
 
 For our test installation, we ran this command below:
 
-docker run -d --restart=unless-stopped \
+> docker run -d --restart=unless-stopped \
   -p 80:80 -p 443:443 \
   -v /host/rancher:/var/lib/rancher \
   rancher/rancher:latest
