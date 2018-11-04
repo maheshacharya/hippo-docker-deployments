@@ -19,7 +19,7 @@ The above command will install Rancher with persitent data volume on the host sy
 
 Add a Cluster
 -------------
-* Directions on how to setup a cluster is not discussed here, pleaes follow guidlines on Rancher documentation.
+* Directions on how to setup a cluster is not discussed here, pleaes follow guidlines on [Rancher documentation](https://rancher.com/docs/rancher/v2.x/en/installation/).
 * We will be selecting Aamazon EC2 for infrastructure provider
 * We have spun up a cluster with 3 worker nodes. 
 * Make sure that the rancher host and worker nodes are in the same availability zone, otherwise you will run into frequent application session expiration due to difference in server times. 
