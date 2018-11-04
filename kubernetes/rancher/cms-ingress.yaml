@@ -10,7 +10,7 @@ metadata:
   name: cms
 spec:
   rules:
-  - host: rancher-cms.cloud-hub.co
+  - host: cms.cloud-hub.co
     http:
       paths:
       - backend:
