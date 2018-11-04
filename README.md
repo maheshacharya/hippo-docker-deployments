@@ -65,6 +65,7 @@ Related References:
 * [Kubernetes Documentation](https://kubernetes.io/docs/home/?path=browse)
 * [Docker Getting Started](https://docs.docker.com/get-started/)
 * [Traefik](https://docs.traefik.io/)
+* [Apache Jackrabbit](http://jackrabbit.apache.org/jcr/index.html)
 
 
 Desclaimer
