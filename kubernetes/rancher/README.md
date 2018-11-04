@@ -60,8 +60,6 @@ mysql-0                 1/1       Running   0          47s
 ```
 Check all running services in namespace 'hippo'
 
-```
-
 > kubectl get services -n hippo
 
 ```
