@@ -18,6 +18,8 @@ While Docker Compose is great for running test and demo clusters, Docker Swarm a
 
 Using these deployment schemes, you can achieve run highly scalable cluster of web applications. Using Kubernetes, you can ahieve even dynamic auto scaling capabilities. 
 
+The links beloow will take you to the documentation of specific deployment scheme, choose one or more that suits you the best.
+
 * [Docker Compose](https://github.com/maheshacharya/hippo-docker-deployments/blob/master/docker-compose/README.md)
 * [Docker Swarm](https://github.com/maheshacharya/hippo-docker-deployments/tree/master/docker-swarm)
 * [Kubernetes](https://github.com/maheshacharya/hippo-docker-deployments/tree/master/kubernetes)
