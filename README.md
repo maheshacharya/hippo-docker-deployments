@@ -4,7 +4,7 @@ I have been working with Hippo CMS platform since early 2015. Hippo CMS is by fa
 * Simplify the overall deployment process for one or more reasons listed below, 
 * CI/CD automation,
   * Use Jenkins to build Docker Images
-  * Use Sonatype Nexus Repository as a private registry to store Docker Images. 
+  * Use [Sonatype Nexus Repository](https://help.sonatype.com/repomanager3/private-registry-for-docker) as a private registry to store Docker Images. 
 * Run scalable application cluster with Horizontally scalable infrastructure.
 
 After stalling and failing for years, I finally have the recipe for successfully deploying Hippo CMS as a Dockerized Container using, 
