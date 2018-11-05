@@ -92,4 +92,7 @@ ingress.extensions "site" created
 
 
 
+References
+-------
+* [Nginx Ingress Annotations]https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md
 
