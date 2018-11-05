@@ -94,5 +94,7 @@ ingress.extensions "site" created
 
 References
 -------
-* [Nginx Ingress Annotations]https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md
+* [Nginx Ingress Annotations](https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md)
+* [Rancher Documentation](https://rancher.com/docs/rancher/v2.x/en/)
+* [Ramcher Youtube Channel -- Great Learning Videos](https://www.youtube.com/channel/UCh5Xtp82q8wjijP8npkVTBA)
 
