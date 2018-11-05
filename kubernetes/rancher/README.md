@@ -3,7 +3,7 @@
 **This doc is still being developed, stay tuned..**
 
 
-Install Rancher
+Install Rancher 2.0
 ---------------
 There are multiple ways to install and start rancher -- all depends on whether you are running  a test instance or a production cluster. Follow Rancher's own guidelines here:
 https://rancher.com/docs/rancher/v2.x/en/installation/
