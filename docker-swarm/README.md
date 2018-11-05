@@ -1,5 +1,5 @@
 # Hippo CMS -- Deployment using Docker Swarm
-Docker Swarm is an elegant platform for deploying a highly-available  and scalable cluster of Hippo CMS application. You can run 100's of containers of Hippo CMS instances at runtime, scale-up or scale-down based on the processing requirements. You can scale underlying infrastructure horizontally by adding new resoures (VM nodes). 
+Docker Swarm is an elegant platform for deploying a highly-available and scalable cluster of Hippo CMS application. You can run 100's of containers of Hippo CMS instances at runtime, scale-up or scale-down based on the processing requirements. You can scale the underlying infrastructure horizontally by adding new resources (VM nodes). 
 
 Goals
 -----
@@ -56,7 +56,7 @@ Modify default file under **apache2/sites-available**. to add proper server/doma
 Preparation
 -----------
 * Copy "apache2" folder(incluing all subfolder/files) to $HOME directory. 
-    * You can also move to another location, but you will have to change the corresponding path in yhe yaml file. 
+    * You can also move to another location, but you will have to change the corresponding path in the yaml file. 
 * Make "hippo/mysql" directory under $HOME directory, without this MySQL service, will fail. 
 
 
@@ -82,7 +82,7 @@ Creating service hippo_mysql-database
 ```
 Verifying the running services 
 ---------
-Running ```docker service ls``` will show similar outout(below).
+Running ```docker service ls``` will show similar output(below).
 
 ```
 ID                  NAME                   MODE                REPLICAS            IMAGE                                                              PORTS
@@ -95,7 +95,7 @@ h5r6kunnq1py        hippo_mysql-database   replicated          1/1              
 Scaling Hippo CMS  to 8 containers.
 -------
 
-Make sure the underlying cluster VM has enough resources to support the new instances, otherwise, you can join more VM nodes to the swram cluster to scale out and then scale the containers.
+Make sure the underlying cluster VM has enough resources to support the new instances, otherwise, you can join more VM nodes to the swarm cluster to scale out and then scale the containers.
 ```
 docker service scale hippo_hippo=8
 ```
