@@ -3,9 +3,9 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   annotations:
-    ingress.kubernetes.io/affinity: cookie
-    ingress.kubernetes.io/session-cookie-hash: sha1
-    ingress.kubernetes.io/session-cookie-name: route
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: route
     kubernetes.io/ingress.class: nginx
   labels:
   name: cms
@@ -23,9 +23,9 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   annotations:
-    ingress.kubernetes.io/affinity: cookie
-    ingress.kubernetes.io/session-cookie-hash: sha1
-    ingress.kubernetes.io/session-cookie-name: route
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: route
     kubernetes.io/ingress.class: nginx
   labels:
   name: site
