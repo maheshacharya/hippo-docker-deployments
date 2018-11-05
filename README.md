@@ -53,6 +53,10 @@ The key objective here is to separate the scalable deployment concerns from the 
   |          +--------------------+            |   
   +--------------------------------------------+    
 ```
+Open Source -- Free Software
+-----------------
+All of the tools and technologies used here are Free Open Source (some do offer enterpise licensing for supprort and advanced features). All you need is a problem that requires large scale deployement solution -- and of course a lot of time and energy to research and ask a lot of stupid questions on community forums -- ah, well, there is no such thing called *stupid question*. 
+
 
 Related References:
 ----------
