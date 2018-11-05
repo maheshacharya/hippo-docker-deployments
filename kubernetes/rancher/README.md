@@ -14,7 +14,7 @@ Our Environment Specs
 
 Install Rancher 2.0
 ---------------
-There are multiple ways to install and start rancher -- all depends on whether you are running  a test instance or a production cluster. Follow Rancher's own guidelines here:
+There are multiple ways to install and start rancher -- all depends on whether you are running a test instance or a production cluster. Follow Rancher's own guidelines here:
 https://rancher.com/docs/rancher/v2.x/en/installation/
 
 For our test installation, we ran this command below:
@@ -25,15 +25,15 @@ For our test installation, we ran this command below:
   rancher/rancher:latest
 ``` 
 
-The above command will install Rancher with persitent data volume on the host system.
+The above command will install Rancher with persistent data volume on the host system.
 
 Add a Cluster
 -------------
-* Directions on how to setup a cluster is not discussed here, pleaes follow guidlines on [Rancher documentation](https://rancher.com/docs/rancher/v2.x/en/installation/).
-* We have selected Aamazon EC2 for infrastructure provider.
+* Directions on how to set up a cluster is not discussed here, please follow guidelines on [Rancher documentation](https://rancher.com/docs/rancher/v2.x/en/installation/).
+* We have selected Amazon EC2 for infrastructure provider.
 * For our test, we have spun up a cluster with 3 worker nodes. 
-* Make sure that the rancher host and worker nodes are in the same availability zone, otherwise you will run into frequent application session expiration due to difference in server times. 
-* It takes about 2-4 minutes for cluster to be prepared and ready for use.
+* Make sure that the rancher host and worker nodes are in the same availability zone, otherwise you will run into frequent application session expiration due to the difference in server times. 
+* It takes about 2-4 minutes for the cluster to be prepared and ready for use.
 
 Application Deployment
 ---------------------
