@@ -1,6 +1,6 @@
 # Hippo CMS -- Rancher Deployment
 
-**This doc is still being developed, stay tuned..**
+Rancher 2.0 is a Container Orchestration platform that is built on top of Kubernetes. Rancher provides UI and command line tooling for provisioning and managing a large number of clusters. I have used rancher for about 2-3 years now, and it's a cool Open Source solution when it comes to Kubernetes. 
 
 
 Install Rancher 2.0
