@@ -24,7 +24,7 @@ The links below will take you to the documentation of specific deployment scheme
 * [Docker Swarm](https://github.com/maheshacharya/hippo-docker-deployments/tree/master/docker-swarm)
 * [Kubernetes](https://github.com/maheshacharya/hippo-docker-deployments/tree/master/kubernetes)
   * [OpenShift](https://github.com/maheshacharya/hippo-docker-deployments/blob/master/kubernetes/openshift/README.md)
-  * [Rancher](https://github.com/maheshacharya/hippo-docker-deployments/blob/master/kubernetes/rancher/README.md)
+  * [Rancher 2.0](https://github.com/maheshacharya/hippo-docker-deployments/blob/master/kubernetes/rancher/README.md)
 
 The key objective here is to separate the scalable deployment concerns from the core application itself, therefore, changes to the application platform should not influence the deployment model as long as [Hippo CMS architecture](https://www.onehippo.org/library/architecture/hippo-cms-architecture.html) remains the same.
 ```
