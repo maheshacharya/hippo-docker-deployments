@@ -2,6 +2,15 @@
 
 Rancher 2.0 is a Container Orchestration platform that is built on top of Kubernetes. Rancher provides UI and command line tooling for provisioning and managing a large number of clusters. I have used rancher for about 2-3 years now, and it's a cool Open Source solution when it comes to Kubernetes. 
 
+Our Environment Specs
+-------------
+* OS: Ubuntu 18.04.1 LTS x86_64 -- Rancher Host Machine
+* CPU: Intel Xeon E5-2676 v3 (4) @ 2.399GHz
+* Memory: 16039MiB
+* Docker Version: 18.06.1-ce
+* Rancher Version: v2.1.1
+* Rancher Cluster Worker Nodes (3) 
+  * AWS t2.large instance with 50GB storage.
 
 Install Rancher 2.0
 ---------------
