@@ -1,21 +1,21 @@
 # Hippo CMS -- OpenShift Deployment
-Kubetnetes is great, but OpenShift makes Kubernetes even simpler and manageable especially when we talk about managing 100's of pods and services. OpenShift enables deployment through web application console, however, we will be using 'oc' commmand to perform deployment process.
+Kubetnetes is great, but OpenShift makes Kubernetes even simpler and manageable especially when we talk about managing 100's of pods and services. OpenShift enables deployment through web application console, however, we will be using 'oc' command to perform deployment process.
 
 How to install OpenShift Origin on Ubuntu 18.04?
 -----------------------------------------------
-Checkout this article:
+Check out this article:
 
 https://medium.com/@maheshacharya_44641/install-openshift-origin-on-ubuntu-18-04-7b98773c2ee6
 
 To Deploy 
 ---------
-Create new project on your OpenShift cluster.
+Create a new project on your OpenShift cluster.
 ```
 oc new-project hippo
 ```
 Enable security context for non-root user for applications
 -----
-Without this you will run into permission [issues](https://github.com/openshift/origin/issues/10483). 
+Without this, you will run into permission [issues](https://github.com/openshift/origin/issues/10483). 
 ```
 docker exec origin oc adm policy add-scc-to-user anyuid -z default -n hippo
 ```
@@ -91,7 +91,7 @@ site      site.cloud-hub.co             hippo      80                      None
 ```
 Scaling Hippo Pods
 -------
-Lets run 4 instances of Hippo pods -- which means, we will be running 4 Hippo CMS instances.
+Let's run 4 instances of Hippo pods -- which means, we will be running 4 Hippo CMS instances.
 ```
 oc scale  --replicas=4 deployment/hippo -n hippo
 ```
@@ -105,5 +105,5 @@ hippo-7dc69df6d-zxtcq   2/2       Running   0          34m
 mysql-0                 1/1       Running   0          34m
 ```
 
-Although Pods start up quickly, the actual Hippo CMS instance might not be available immediately for processing new requests, depending on the size of the database, it might take some time to build local repository index within the container. Its useful to add system availabilty check by using Hippo's [Ping Servlet](https://www.onehippo.org/library/administration/servlets-in-use.html).
+Although Pods start up quickly, the actual Hippo CMS instance might not be available immediately for processing new requests, depending on the size of the database, it might take some time to build local repository index within the container. Its useful to add system availability check by using Hippo's [Ping Servlet](https://www.onehippo.org/library/administration/servlets-in-use.html).
 
