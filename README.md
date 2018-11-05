@@ -55,7 +55,7 @@ The key objective here is to separate the scalable deployment concerns from the 
 ```
 
 Related References:
-======
+----------
 * [Build Docker Images of your Hippo CMS project](https://medium.com/@maheshacharya_44641/hippo-cms-docker-containerization-703e2e4e496c).
 * [Install OpenShift Origin on Ubuntu 18.04](https://medium.com/@maheshacharya_44641/install-openshift-origin-on-ubuntu-18-04-7b98773c2ee6).
 * [Rancher 2.0 Documentation](https://rancher.com/docs/rancher/v2.x/en/)
@@ -68,6 +68,6 @@ Related References:
 
 
 Disclaimer
-==========
+-------
 * All ideas and concepts presented here are my own and may NOT have been tested, approved and supported by the parent company of Hippo CMS.
 
