@@ -3,7 +3,7 @@ Hippo CMS Docker Deployments
 I have been working with Hippo CMS platform since early 2015. Hippo CMS is by far one of the finest Java-based Open Source Content Management system out there. Ever since I have learned about Docker, I have been experimenting with the idea of deploying Hippo CMS on Docker:
 * Simplify the overall deployment process for one or more reasons listed below, 
 * CI/CD automation,
-  * Use Jenkins to build Docker Images
+  * Use [Jenkins](https://wiki.jenkins.io/display/JENKINS/Docker+Plugin) to build Docker Images
   * Use [Sonatype Nexus Repository](https://help.sonatype.com/repomanager3/private-registry-for-docker) as a private registry to store Docker Images. 
 * Run scalable application cluster with Horizontally scalable infrastructure.
 
@@ -65,6 +65,8 @@ Related References:
 * [Docker Getting Started](https://docs.docker.com/get-started/)
 * [Traefik](https://docs.traefik.io/)
 * [Apache Jackrabbit](http://jackrabbit.apache.org/jcr/index.html)
+* [Sonatype Nexus - Private Registry for Docker](https://help.sonatype.com/repomanager3/private-registry-for-docker)
+* [Jenkins Docker Plugin](https://wiki.jenkins.io/display/JENKINS/Docker+Plugin)
 
 
 Disclaimer
