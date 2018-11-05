@@ -33,7 +33,7 @@ Add a Cluster
 * We have selected Aamazon EC2 for infrastructure provider.
 * For our test, we have spun up a cluster with 3 worker nodes. 
 * Make sure that the rancher host and worker nodes are in the same availability zone, otherwise you will run into frequent application session expiration due to difference in server times. 
-* It takes about 5-10 minutes for cluster to be prepared and ready for use.
+* It takes about 2-4 minutes for cluster to be prepared and ready for use.
 
 Application Deployment
 ---------------------
