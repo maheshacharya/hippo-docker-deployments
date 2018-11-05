@@ -38,8 +38,8 @@ Architecture
                     |                              +-----------------------+                            
                                                                                     
 ```
-As illustrated in the above diagram, overall deployment architecture invcludes,
-* MySQL Service -- persietent data storage for Hippo CMS (Jacrabbit) Cluster.
+As illustrated in the above diagram, overall deployment architecture includes,
+* MySQL Service -- persistent data storage for Hippo CMS (Jackrabbit) Cluster.
 * Hippo Pod contains 
   * Hippo CMS container
   * Nginx Reverse Proxy container
@@ -62,7 +62,7 @@ Hippo Pod
                                 |                                               |              
                          site.cloud-hub.co                               cms.cloud-hub.co      
 ```
-Kubernetes ingress is used as pure Load Balancer service, we will create a reverse proxy setup at Pod level using Nginx. The only port that is exposed from Hippo service is port 80 on Nginx. The Load Balancer will route traffic to Nginx. Nginx is configured to appropriately pass request to applicable context **/site** or **/cms**. This setup helps the Channel Manager in CMS work without any issues.
+Kubernetes ingress is used as pure Load Balancer service, we will create a reverse proxy setup at Pod level using Nginx. The only port that is exposed to Hippo service is port 80 on Nginx. The Load Balancer will route traffic to Nginx. Nginx is configured to appropriately pass request to applicable context **/site** or **/cms**. This setup helps the Channel Manager in CMS work without any issues.
 ```
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -260,10 +260,10 @@ Events:                                             <none>
 
 Having Trouble with Ingress configuration? 
 --------------
-Checkout this : https://kubernetes.github.io/ingress-nginx/troubleshooting/
+Check out this: https://kubernetes.github.io/ingress-nginx/troubleshooting/
 
 References
 -------
 * Get started with Kubernetes: https://kubernetes.io/docs/
-* Install Kubernetes Cluster usking Kubeadm: https://kubernetes.io/docs/setup/independent/install-kubeadm/
+* Install Kubernetes Cluster using Kubeadm: https://kubernetes.io/docs/setup/independent/install-kubeadm/
 * Kubernetes Ingress Controller: https://kubernetes.github.io/ingress-nginx/deploy/
