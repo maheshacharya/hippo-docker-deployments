@@ -83,7 +83,7 @@ In the rancher UI move 'hippo' namespace under a new project "hippo-demo"
 Deploy [ingress](https://github.com/maheshacharya/hippo-docker-deployments/blob/master/kubernetes/hippo-ingress.yaml) with session affinity enabled.
 
 
-> kubectl create -f hippo-ingress.yaml -n hippo
+> kubectl create -f https://raw.githubusercontent.com/maheshacharya/hippo-docker-deployments/master/kubernetes/hippo-ingress.yaml -n hippo
 
 ```
 ingress.extensions "cms" created
