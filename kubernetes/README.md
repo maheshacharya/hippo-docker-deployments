@@ -215,24 +215,45 @@ Why not use Node Port or Load Balancer options to expose the service?
 The challenge here is the session affinity based on a server managed entity such as JSESSIONID or ROUTE_ID, Load Balancer do offer session affinity based on client IP, which is not good for Hippo CMS, imagine yourself roaming, hopping in and out of different networks, each time your network changes, you might have new IP address and the app will prompt you for re-login -- annoying right? That is why we have to use the Ingress.
 
 ```
+#Ingress for CMS
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: hippo-ingress
   annotations:
-    nginx.ingress.kubernetes.io/affinity: "cookie"
-    nginx.ingress.kubernetes.io/session-cookie-name: "route"
-    nginx.ingress.kubernetes.io/session-cookie-hash: "sha1"
-
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: route
+    kubernetes.io/ingress.class: nginx
+  labels:
+  name: cms
 spec:
   rules:
-  - host: "*.cloud-hub.co"
+  - host: cms.cloud-hub.co
     http:
       paths:
       - backend:
           serviceName: hippo
           servicePort: 80
-        path: /
+---
+#Ingress for site
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: route
+    kubernetes.io/ingress.class: nginx
+  labels:
+  name: site
+spec:
+  rules:
+  - host: site.cloud-hub.co
+    http:
+      paths:
+      - backend:
+          serviceName: hippo
+          servicePort: 80
 ```
 Inspect Ingress Confguration
 --------
