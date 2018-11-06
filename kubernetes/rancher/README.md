@@ -80,7 +80,7 @@ hippo-mysql-database   ClusterIP   10.43.191.101   <none>        3306/TCP   1m
 
 In the rancher UI move 'hippo' namespace under a new project "hippo-demo"
 
-Deploy [ingress](https://github.com/maheshacharya/hippo-docker-deployments/blob/master/kubernetes/rancher/hippo-ingress.yaml) with session affinity enabled.
+Deploy [ingress](https://github.com/maheshacharya/hippo-docker-deployments/blob/master/kubernetes/hippo-ingress.yaml) with session affinity enabled.
 
 
 > kubectl create -f hippo-ingress.yaml -n hippo
