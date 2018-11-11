@@ -258,24 +258,28 @@ spec:
 Inspect Ingress Confguration
 --------
 ```
-kubectl describe ingress hippo-ingress -n hippo-test
+kubectl describe ingress cms -n hippo-test
 ```
 Output
 ```
-Name:             hippo-ingress
-Namespace:        hippo
-Address:          
+Name:             cms
+Namespace:        hippo-test
+Address:
 Default backend:  default-http-backend:80 (<none>)
 Rules:
-  Host            Path  Backends
-  ----            ----  --------
-  *.cloud-hub.co  
-                  /   hippo:80 (<none>)
+  Host              Path  Backends
+  ----              ----  --------
+  cms.cloud-hub.co
+                       hippo:80 (<none>)
 Annotations:
-  nginx.ingress.kubernetes.io/session-cookie-name:  route
+  kubernetes.io/ingress.class:                      nginx
   nginx.ingress.kubernetes.io/affinity:             cookie
   nginx.ingress.kubernetes.io/session-cookie-hash:  sha1
-Events:                                             <none>
+  nginx.ingress.kubernetes.io/session-cookie-name:  route
+Events:
+  Type    Reason  Age    From                      Message
+  ----    ------  ----   ----                      -------
+  Normal  CREATE  4m17s  nginx-ingress-controller  Ingress hippo/cms                                            <none>
 ```
 
 
