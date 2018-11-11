@@ -1,5 +1,4 @@
 <VirtualHost *:80>
-        
 	ServerName cms.cloud-hub.co
 	ProxyRequests Off
 	ProxyPreserveHost  Off
@@ -9,56 +8,49 @@
 		Order deny,allow
 		Allow from all
 	</Location>
-
-
 	Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
 	<Proxy balancer://cluster>
 		BalancerMember http://hippo1:8080 route=1
-	    BalancerMember http://hippo2:8080 route=2
-	    BalancerMember http://hippo3:8080 route=3
-	    ProxySet stickysession=ROUTEID nofailover=Off	    
+	  BalancerMember http://hippo2:8080 route=2
+	  BalancerMember http://hippo3:8080 route=3
+	  ProxySet stickysession=ROUTEID nofailover=Off
 	</Proxy>
+  ProxyPass / balancer://cluster/cms/
+  ProxyPassReverse / balancer://cluster/cms/
+  ProxyPassReverseCookiePath /cms /
 
-	
-    ProxyPass / balancer://cluster/cms/
-    ProxyPassReverse / balancer://cluster/cms/
-    ProxyPassReverseCookiePath /cms /	
+  #This is required for Channel Manager to render the site correctly within CMS
+  #Check this (below) page for Channel Manager troubleshooting.
+  #https://www.onehippo.org/library/concepts/channels/channel-manager-troubleshooting.html
 
-    #This is required for Channel Manager to render the site correctly within CMS 
-    #Check this (below) page for Channel Manager troubleshooting. 
-    #https://www.onehippo.org/library/concepts/channels/channel-manager-troubleshooting.html
-
-    ProxyPass /site/ balancer://cluster/site/
+  ProxyPass /site/ balancer://cluster/site/
 
 </VirtualHost>
 <VirtualHost *:80>
-            
+
 	ServerName site.cloud-hub.co
 	ServerAlias *.cloud-hub.co
 
 	ProxyRequests Off
 
-		
 	ProxyPreserveHost  On
 	RewriteEngine on
 	# This is required if the application uses context-aware modules such as spring security.
 	# remove the extra '/site' appended by the context-aware application.
-	RewriteRule ^/site/(.*)$ /$1 [P] 
+	RewriteRule ^/site/(.*)$ /$1 [P]
 
 	<Location />
 		Order deny,allow
 		Allow from all
 	</Location>
-    
     Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
 	<Proxy balancer://cluster>
-	    BalancerMember http://hippo1:8080 route=1
-	    BalancerMember http://hippo2:8080 route=2
-	    BalancerMember http://hippo3:8080 route=3
-	    ProxySet stickysession=ROUTEID nofailover=Off
+    BalancerMember http://hippo1:8080 route=1
+    BalancerMember http://hippo2:8080 route=2
+    BalancerMember http://hippo3:8080 route=3
+    ProxySet stickysession=ROUTEID nofailover=Off
 	</Proxy>
-	ProxyPass / balancer://cluster/site/	
+	ProxyPass / balancer://cluster/site/
 	ProxyPassReverse  / balancer://cluster/site/
-    ProxyPassReverseCookiePath /site /
-    #ProxyPassreverseCookieDomain balancer://cluster site.cloud-hub.co
+  ProxyPassReverseCookiePath /site /
 </VirtualHost>
