@@ -10,8 +10,6 @@ data:
       server_name "cms.cloud-hub.co";
 
       location / {
-        # Set headers for proxy header rewriting, like ProxyPassReverse in Apache http
-        # See http://wiki.nginx.org/LikeApache
         proxy_set_header X-Forwarded-Host $host;
         proxy_set_header X-Forwarded-Server $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -50,7 +48,7 @@ data:
     }
 
 ---
-#Deploy "mysql" pod 
+#Deploy "mysql" pod
 apiVersion: apps/v1beta1
 kind: StatefulSet
 metadata:
@@ -70,17 +68,17 @@ spec:
       containers:
       - name: mysql
         image: mysql:5.6
-        env: 
-        - 
+        env:
+        -
           name: MYSQL_USER
           value: hippo
-        - 
+        -
           name: MYSQL_PASSWORD
           value: hippo
-        - 
+        -
           name: MYSQL_DATABASE
           value: hippo
-        - 
+        -
           name: MYSQL_ROOT_PASSWORD
           value: hippo
         ports:
@@ -88,7 +86,7 @@ spec:
           name: mysql
         volumeMounts:
         - name: mysql-vol
-          mountPath: /var/lib/mysql      
+          mountPath: /var/lib/mysql
 ---
 #Deploy "mysql" service
 apiVersion: v1
@@ -136,7 +134,7 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - mountPath: /etc/nginx/sites-available/ 
+        - mountPath: /etc/nginx/sites-available/
           readOnly: true
           name: hippo-conf
         - mountPath: /var/log/nginx
@@ -154,4 +152,3 @@ spec:
     targetPort: 80
   selector:
     app: hippo
-
